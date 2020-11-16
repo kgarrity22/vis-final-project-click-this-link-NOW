@@ -1,9 +1,10 @@
 .hero-image {
-background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-url("assets/boston-night.jpeg");
+background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+url("assets/boston-sunset.jpeg");
 
 height: 800px;
 width: 100%;
+margin: 0px;
 /* height: 90%;
 width: 100%; */
 
