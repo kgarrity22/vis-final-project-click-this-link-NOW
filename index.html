@@ -17,9 +17,11 @@
 
     <div class="hero-image">
         <div class="hero-text">
-            <header>vis final project</header>
+            <header>Vis Final Project</header>
         </div>
     </div>
+
+    <!-- nav bar -->
     <nav>
         <ul>
             <li>
@@ -28,6 +30,42 @@
            
         </ul>
     </nav>
+
+    <!-- place holder divs for the charts -->
+    <div class="all-charts">
+
+        <div class="chart1"></div>
+
+        <div class="chart2"></div>
+
+        <div class="chart3"></div>
+
+        <div class="chart4"></div>
+
+        <div class="chart5"></div>
+
+        <div class="chart6"></div>
+
+
+    </div>
+
+
+
+
+
 </body>
+
+<script>
+    d3.csv('yelp.csv', d => {
+            return d3.autoType(d)
+        }).then(data => {
+            console.log("data: ", data)
+
+
+
+        })
+        // end of CSV
+    
+</script>
 
 </html>
