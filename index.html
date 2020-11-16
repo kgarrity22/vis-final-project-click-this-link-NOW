@@ -6,15 +6,11 @@
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Six+Caps&display=swap" rel="stylesheet">
-    <script src="//d3js.org/d3.v3.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://d3js.org/d3.v6.min.js"></script>
+    
 
-    <script src="covidVis.js" defer type="module"></script>
-    <script src="cuisineVis.js" defer type="module"></script>
-    <script src="locationVis.js" defer type="module"></script>
-    <script src="ratingVis.js" defer type="module"></script>
+    <script src="main.js" defer type="module"></script>
 
 
     
@@ -57,33 +53,6 @@
 
 
 
-
-
 </body>
-
-<script>
-    d3.csv('yelp.csv', d => {
-            return d3.autoType(d)
-        }).then(data => {
-            console.log("data: ", data)
-
-            const covidChart = covidVis(".chart1");
-
-            const cuisineChart = cuisineVis(".chart2");
-
-            const locationChart = locationVis(".chart3");
-            
-            const ratingChart = ratingVis(".chart4");
-            
-
-
-
-
-
-        }); 
-        
-        // end of CSV parsing
-    
-</script>
 
 </html>
