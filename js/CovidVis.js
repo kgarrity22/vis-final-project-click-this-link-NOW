@@ -16,6 +16,33 @@ export default function CovidVis(container){
 
 
 
+    // dummy code outline for creating chart with time as one axis
+    
+    let xScale = d3.scaleTime()
+        .domain([0, 2000])
+        .range([0, width])
+    
+    let yScale = d3.scaleLinear()
+        .domain([0, 300])
+        .range([height, 0])
+
+    let xAxis = d3.axisBottom()
+        .scale(xScale)
+
+    let yAxis = d3.axisLeft()
+        .scale(yScale)
+        .ticks(10)
+
+    svg.append("g")
+        .attr("class", "axis x-axis")
+        .attr("transform", `translate(0, ${height})`);
+
+    svg.append("g")
+        .attr("class", "axis y-axis")
+        .attr("height")
+
+
+
 
 
 }
