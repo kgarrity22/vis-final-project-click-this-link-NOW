@@ -1,9 +1,9 @@
-import CovidVis from './CovidVis.js';
-import CuisineVis from './CuisineVis.js';
-import LocationVis from './LocationVis.js';
-import RatingVis from './RatingVis.js';
+import CovidVis from './js/CovidVis.js';
+import CuisineVis from './js/CuisineVis.js';
+import LocationVis from './js/LocationVis.js';
+import RatingVis from './js/RatingVis.js';
 
-d3.csv('yelp.csv', d => {
+d3.csv('data/yelp.csv', d => {
     return d3.autoType(d)
 }).then(data => {
     console.log("data: ", data)
