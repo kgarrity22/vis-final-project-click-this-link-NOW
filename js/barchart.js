@@ -1,10 +1,10 @@
 //vis for comparing ratings of restaurants -- what are the best restaurants
 
-export default function RatingVis(container) {
+export default function barchart(container) {
 
-    d3.csv('yelp.csv', d3.autoType)
-    .then(data=>{
-        yelp = data;
+    d3.csv('data/yelp.csv', d3.autoType)
+    .then(yelp=>{
+        
         console.log(yelp)
 
         const margin = ({ top: 50, right: 50, bottom: 50, left: 50 })
@@ -77,7 +77,7 @@ export default function RatingVis(container) {
         svg.append("g")
             .attr("fill", "#48C9B0")
             .selectAll("bar")
-            .data(uelp)
+            .data(yelp)
             .join("bar")
             .attr("cx", d => xScale(d.restaurant_name))
             .attr("cy", d => yScale(d.rating));
