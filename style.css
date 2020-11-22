@@ -38,3 +38,23 @@ nav {
     height: 65px;
 
 }
+
+/* bar chart styling */
+
+.bar:hover{
+    fill:orange
+}
+.tooltip{
+    position      : absolute;
+    text-align    : center;
+    max-width     : 70px;
+    max-height    : 30px;
+    padding       : 8px;
+    border        : none;
+    border-radius : 8px;
+    margin-top    : -30px;
+    font          : 10px sans-serif;
+    background    : black;
+    color         : white;
+    pointer-events: none;
+}
