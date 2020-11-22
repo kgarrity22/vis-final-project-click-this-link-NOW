@@ -1,9 +1,8 @@
 //vis for comparing ratings of restaurants -- what are the best restaurants
 
-export default function barchart(container) {
+export default function barchart(container, yelp) {
 
-    d3.csv('data/yelp.csv', d3.autoType)
-    .then(yelp=>{
+    
         
         console.log(yelp)
 
@@ -82,7 +81,7 @@ export default function barchart(container) {
             .attr("cx", d => xScale(d.restaurant_name))
             .attr("cy", d => yScale(d.rating));
 
-    })
+    
 
 
 

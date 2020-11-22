@@ -1,5 +1,5 @@
 //how do covid trends relate to restaurants
-export default function CovidMap(container){
+export default function CovidMap(container, data){
 
     // chart code goes here
 
