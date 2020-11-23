@@ -10,6 +10,11 @@ d3.json('data/closedRestaurants.json', d3.autoType).then(data=>{
 
 }); // end of JSON parsing
 
+d3.json('data/yelpedited.geojson', d3.autoType).then(data=>{ 
+
+    const ratingRestaurantsChart = map("map", data);
+
+});
 
 d3.csv('data/yelp.csv', d => {
     return d3.autoType(d)
