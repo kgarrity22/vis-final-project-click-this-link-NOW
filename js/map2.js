@@ -30,7 +30,9 @@ export default function map2(HTMLcontainer, data) {
                         .data(closedRestaurants)
                         .enter()
                         .append("circle")
-                        .attr("r", 10)
+                        .attr("r", 8)
+                        .attr("stroke-width", 0.5)
+                        .attr("stroke", "black")                
                         .style("fill", "ff0000")
                         .attr("fill-opacity", 0.7)
                         .on("mouseenter", (event, d) => {
