@@ -42,7 +42,9 @@ export default function map2(HTMLcontainer, data) {
                                 .style("top", pos[1]-20+"px")
                                // .select("#value")
                                 .html("<p>Restaurant Name: " + d.name + "<br/>" +
-                                    "other stuff: " + "</p>"
+                                    "Yelp Rating: " + d.rating + "<br/>" + 
+                                    "Price: " + d.price + "<br/>" +
+                                    "Cuisine: " + d.cuisine + "</p>"
                                 )
                 
                             d3.select("#closedRestaurantMapTooltip").classed("hidden", false);
