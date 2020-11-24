@@ -53,7 +53,7 @@ export default function bubble(container, data) {
 
     const margin = ({ top: 50, right: 50, bottom: 50, left: 50 })
     const width = 1000 - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
+        height = 1000 - margin.top - margin.bottom;
 
 
     let svg = d3.select(container).append("svg")
@@ -68,7 +68,7 @@ export default function bubble(container, data) {
     var diameter = 600;
 
     var bubble = d3.pack(data)
-        .size([diameter, diameter])
+        .size([600, 600])
         .padding(1.5);
     
     var nodes = d3.hierarchy(dataset)
@@ -89,22 +89,34 @@ export default function bubble(container, data) {
         .append("g")
         .attr("class", "node")
         .attr("transform", function (d) {
-            console.log("d! in here!: ", d)
-            return "translate(" + d.x + "," + d.y + ")";
+            //console.log("d! in here!: ", d)
+            return "translate(" + d.x*1.5 + "," + d.y*1.5 + ")";
         });
 
     node.append("circle")
         .attr("r", function (d) {
-            console.log("radius d: ", d)
-            return d.r;
+            //console.log("radius d: ", d)
+            return d.r*1.5;
         })
         .style("fill", function (d, i) {
             return color(i);
         });
 
+    node.append("text")
+        .attr("dy", 1)
+        .style("text-anchor", "middle")
+        .text(function (d) {
+            return d.data.type;
+        })
+        .attr("font-family", "sans-serif")
+        .attr("font-size", function (d) {
+            return d.r / 4;
+        })
+        .attr("fill", "black");
+
     
     
-    console.log("bubble: ", bubble)
+    
 
 
 
