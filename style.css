@@ -172,3 +172,10 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.chart2 {
+  width: 1200px;
+  overflow: auto;
+  border: 1px solid gray;
+  height: 800px;
+}

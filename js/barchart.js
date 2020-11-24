@@ -5,9 +5,9 @@ export default function barchart(container, yelp) {
 
     console.log(yelp)
 
-    const margin = ({ top: 50, right: 50, bottom: 50, left: 50 })
-    const width = 1000 - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
+    const margin = ({ top: 50, right: 50, bottom: 200, left: 50 })
+    const width = 30000 - margin.left - margin.right,
+        height = 800 - margin.top - margin.bottom;
 
 
 
