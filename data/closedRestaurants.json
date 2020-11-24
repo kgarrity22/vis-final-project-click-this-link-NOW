@@ -7,6 +7,9 @@
             "long": -71.084241,
             "metadata": [],
             "name": "Lir",
+            "rating": 3,
+            "price": "$$",
+            "cuisine": "American (New), Pubs, Breakfast & Brunch",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -15,6 +18,9 @@
             "long": -71.08432,
             "metadata": [],
             "name": "The Pour House",
+            "rating": 3.5,
+            "price": "$",
+            "cuisine": "Bars, American (Traditional), American (New)",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -23,6 +29,9 @@
             "long": -71.08442,
             "metadata": [],
             "name": "McGreevey's",
+            "rating": 3.5,
+            "price": "$$",
+            "cuisine": "Sports Bars, Breakfast & Brunch, Irish",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -31,6 +40,9 @@
             "long": -71.08362,
             "metadata": [],
             "name": "Whiskey’s",
+            "rating": 2.5,
+            "price": "$$",
+            "cuisine": "American (Traditional), Pubs, Whiskey Bars",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -39,6 +51,9 @@
             "long": -71.06813,
             "metadata": [],
             "name": "Fleming's Steakhouse",
+            "rating": 4,
+            "price": "$$$",
+            "cuisine": "Wine Bars, Steakhouses, Seafood",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -47,6 +62,9 @@
             "long": -71.081632,
             "metadata": [],
             "name": "Bar Boulud",
+            "rating": 3,
+            "price": "$$$",
+            "cuisine": "Bars, Burgers, French",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -55,6 +73,9 @@
             "long": -71.056035,
             "metadata": [],
             "name": "Cheers Faneuil Hall",
+            "rating": 2.5,
+            "price": "$$",
+            "cuisine": "American (Traditional), Burgers, Beer Bar",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -63,6 +84,9 @@
             "long": -71.055995,
             "metadata": [],
             "name": "Dick’s Last Resort",
+            "rating": 2.5,
+            "price": "$$",
+            "cuisine": "Bars, American (Traditional), Seafood",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -71,6 +95,9 @@
             "long": -71.07049,
             "metadata": [],
             "name": "Artu",
+            "rating": 3.5,
+            "price": "$$",
+            "cuisine": "Italian, Diners, Wine Bars",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -79,6 +106,9 @@
             "long": -71.06095,
             "metadata": [],
             "name": "The Fours",
+            "rating": 3.5,
+            "price": "$$",
+            "cuisine": "Sports Bars, American (Traditional)",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -87,6 +117,9 @@
             "long": -71.05563,
             "metadata": [],
             "name": "Taranta",
+            "rating": 4,
+            "price": "$$$",
+            "cuisine": "Latin American, Italian, Cooking Classes",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -95,6 +128,9 @@
             "long": -71.054072,
             "metadata": [],
             "name": "Kamakura",
+            "rating": 4,
+            "price": "$$$",
+            "cuisine": "Japanese",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -103,6 +139,9 @@
             "long": -71.0562,
             "metadata": [],
             "name": "Au Bon Pain 53 State Street",
+            "rating": 3,
+            "price": "$",
+            "cuisine": "Sandwiches, Bakeries, Salad",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -111,6 +150,9 @@
             "long": -71.054055,
             "metadata": [],
             "name": "Battery Park Bar and Patio",
+            "rating": 3.5,
+            "price": "$$",
+            "cuisine": "American (Traditional), Lounges, Sports Bars",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -119,6 +161,9 @@
             "long": -71.062804,
             "metadata": [],
             "name": "New Saigon Sandwich",
+            "rating": 4,
+            "price": "$",
+            "cuisine": "Delis, Vietnamese, Sandwiches",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -127,6 +172,9 @@
             "long": -71.057601,
             "metadata": [],
             "name": "Les Zygomates",
+            "rating": 3.5,
+            "price": "$$$",
+            "cuisine": "French, Wine Bars, Jazz & Blues",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -135,6 +183,9 @@
             "long": -71.097931,
             "metadata": [],
             "name": "Uno Pizzeria and Grill",
+            "rating": 2.5,
+            "price": "$$",
+            "cuisine": "Pizza, Gluten-Free, American (Traditional)",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -143,6 +194,9 @@
             "long": -71.1020,
             "metadata": [],
             "name": "Craigie Burger in Time Out Market",
+            "rating": 3,
+            "price": "NA",
+            "cuisine": "Burgers",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -151,6 +205,9 @@
             "long": -71.102934,
             "metadata": [],
             "name": "Saltie Girl at Time Out Market",
+            "rating": 4.5,
+            "price": "$$$",
+            "cuisine": "Seafood, Wine Bars, Cocktail Bars",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -159,6 +216,9 @@
             "long": -71.10061,
             "metadata": [],
             "name": "Bar Louie",
+            "rating": 3,
+            "price": "$$",
+            "cuisine": "Bars, American (New), Gastropubs",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -167,6 +227,9 @@
             "long": -71.10827,
             "metadata": [],
             "name": "The Frogmore",
+            "rating": 4,
+            "price": "$$",
+            "cuisine": "Bars, Southern, Breakfast & Brunch",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -175,6 +238,9 @@
             "long": -71.103816,
             "metadata": [],
             "name": "Bella Luna and the Milky Way",
+            "rating": 3.5,
+            "price": "$$",
+            "cuisine": "American (New), Lounges, Pizza",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -183,6 +249,9 @@
             "long": -71.13703,
             "metadata": [],
             "name": "Deep Ellum",
+            "rating": 4,
+            "price": "$$",
+            "cuisine": "Pubs, American (New), Breakfast & Brunch",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -191,6 +260,9 @@
             "long": -71.132501,
             "metadata": [],
             "name": "Regina Pizzeria",
+            "rating": 3.5,
+            "price": "$$",
+            "cuisine": "Pizza, Italian",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -199,6 +271,9 @@
             "long": -71.088191,
             "metadata": [],
             "name": "Conor Larkin’s Grill and Tap",
+            "rating": 3.5,
+            "price": "$$",
+            "cuisine": "Pubs, American (Traditional), Irish",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -207,6 +282,9 @@
             "long": -71.07508,
             "metadata": [],
             "name": "Coda",
+            "rating": 4,
+            "price": "$$",
+            "cuisine": "American (New), Burgers, Cocktail Bars",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -215,6 +293,9 @@
             "long": -71.072611,
             "metadata": [],
             "name": "Stella",
+            "rating": 4,
+            "price": "$$$",
+            "cuisine": "Italian, Wine Bars, Desserts",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -223,6 +304,9 @@
             "long": -71.06592,
             "metadata": [],
             "name": "Cinquecento",
+            "rating": 4,
+            "price": "$$$",
+            "cuisine": "Italian, Seafood, Bars",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -231,6 +315,9 @@
             "long": -71.038733,
             "metadata": [],
             "name": "Legal Test Kitchen",
+            "rating": 3.5,
+            "price": "$$",
+            "cuisine": "Seafood, Breakfast & Brunch, Bars",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -239,6 +326,9 @@
             "long": -71.0691,
             "metadata": [],
             "name": "Legal Sea Foods",
+            "rating": 3.5,
+            "price": "$$",
+            "cuisine": "Seafood, Bars",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -247,6 +337,9 @@
             "long": -71.051068,
             "metadata": [],
             "name": "Barlow’s Restaurant",
+            "rating": 3,
+            "price": "$$",
+            "cuisine": "Bars, American (New), Seafood",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -255,6 +348,9 @@
             "long": -71.052959,
             "metadata": [],
             "name": "Backyard Betty’s",
+            "rating": 4,
+            "price": "$$",
+            "cuisine": "American (New)",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -263,6 +359,9 @@
             "long": -71.15587,
             "metadata": [],
             "name": "The Squealing Pig",
+            "rating": 3.5,
+            "price": "$$",
+            "cuisine": "Pubs, Irish, Irish Pub",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -271,6 +370,9 @@
             "long": -71.02889,
             "metadata": [],
             "name": "Pret a Manger",
+            "rating": 3.5,
+            "price": "$",
+            "cuisine": "Coffee & Tea, Sandwiches, Breakfast & Brunch",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -279,6 +381,9 @@
             "long": -71.057601,
             "metadata": [],
             "name": "Pret a Manger",
+            "rating": 3.5,
+            "price": "$",
+            "cuisine": "Coffee & Tea, Breakfast & Brunch, Sandwiches",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -287,6 +392,9 @@
             "long": -71.059197,
             "metadata": [],
             "name": "Pret a Manger",
+            "rating": 4,
+            "price": "$$",
+            "cuisine": "Coffee & Tea, Sandwiches, Breakfast & Brunch, Cafes",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -295,6 +403,9 @@
             "long": -71.05482,
             "metadata": [],
             "name": "Pret a Manger",
+            "rating": 3,
+            "price": "NA",
+            "cuisine": "Coffee & Tea, Breakfast & Brunch, Sandwiches",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -303,6 +414,9 @@
             "long": -71.074512,
             "metadata": [],
             "name": "Pret a Manger",
+            "rating": 3.5,
+            "price": "$",
+            "cuisine": "Coffee & Tea, Sandwiches, Salad",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -311,6 +425,9 @@
             "long": -71.0559,
             "metadata": [],
             "name": "Pret a Manger",
+            "rating": 4.5,
+            "price": "$",
+            "cuisine": "Coffee & Tea, Breakfast & Brunch, Sandwiches",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -319,6 +436,9 @@
             "long": -71.120974,
             "metadata": [],
             "name": "Parsnip",
+            "rating": 4,
+            "price": "$$$$",
+            "cuisine": "American (New), Desserts, Wine Bars",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -327,6 +447,9 @@
             "long": -71.11552,
             "metadata": [],
             "name": "Cafe Pamplona",
+            "rating": 3.5,
+            "price": "$",
+            "cuisine": "Spanish, Coffee & Tea, Basque",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -335,6 +458,9 @@
             "long": -71.123732,
             "metadata": [],
             "name": "Legal Sea Foods",
+            "rating": 3.5,
+            "price": "$$",
+            "cuisine": "Seafood, Bars",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -343,6 +469,9 @@
             "long": -71.137996,
             "metadata": [],
             "name": "Brit Bakery",
+            "rating": 5,
+            "price": "NA",
+            "cuisine": "Desserts, Caterers, Bakeries",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -351,6 +480,9 @@
             "long": -71.09032,
             "metadata": [],
             "name": "The Friendly Toast",
+            "rating": 4,
+            "price": "$$",
+            "cuisine": "Bars, Breakfast & Brunch, Diners",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -359,6 +491,9 @@
             "long": -71.09057,
             "metadata": [],
             "name": "Flat Top Johnny’s",
+            "rating": 3.5,
+            "price": "$$",
+            "cuisine": "Pool Halls, Dive Bars, American (Traditional)",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -367,6 +502,9 @@
             "long": -71.10342,
             "metadata": [],
             "name": "The Field Pub",
+            "rating": 3.5,
+            "price": "$",
+            "cuisine": "Pubs, Burgers, Sandwiches",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -375,6 +513,9 @@
             "long": -71.098797,
             "metadata": [],
             "name": "Bukowski Tavern",
+            "rating": 3.5,
+            "price": "$$",
+            "cuisine": "American (Traditional), Dive Bars",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -383,6 +524,9 @@
             "long": -71.098426,
             "metadata": [],
             "name": "Wit's End",
+            "rating": 4,
+            "price": "$$",
+            "cuisine": "Cocktail Bars, American (New)",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -391,6 +535,9 @@
             "long": -71.09283,
             "metadata": [],
             "name": "The Automatic",
+            "rating": 4,
+            "price": "$$",
+            "cuisine": "Cocktail Bars, American (Traditional), Tapas/Small Plates",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -399,6 +546,9 @@
             "long": -71.097131,
             "metadata": [],
             "name": "Cuchi Cuchi",
+            "rating": 4,
+            "price": "$$$",
+            "cuisine": "Tapas/Small Plates, Wine Bars, Cocktail Bars",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -407,6 +557,9 @@
             "long": -71.100275,
             "metadata": [],
             "name": "City Girl Cafe",
+            "rating": 4.5,
+            "price": "$$",
+            "cuisine": "Italian, Breakfast & Brunch, Sandwiches",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -415,6 +568,9 @@
             "long": -71.131064,
             "metadata": [],
             "name": "The Table at Season to Taste",
+            "rating": 4.5,
+            "price": "$$$$",
+            "cuisine": "American (New)",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -423,6 +579,9 @@
             "long": -71.118926,
             "metadata": [],
             "name": "Emack and Bolio’s",
+            "rating": 3,
+            "price": "$$",
+            "cuisine": "Ice Cream & Frozen Yogurt",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -431,6 +590,9 @@
             "long": -71.084814,
             "metadata": [],
             "name": "Dante",
+            "rating": 3.5,
+            "price": "$$$",
+            "cuisine": "Italian",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -439,6 +601,9 @@
             "long": -71.106415,
             "metadata": [],
             "name": "Bergamot",
+            "rating": 4,
+            "price": "$$$",
+            "cuisine": "American (New), Bars",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -447,6 +612,9 @@
             "long": -71.099412,
             "metadata": [],
             "name": "Bull McCabe’s Pub",
+            "rating": 4.5,
+            "price": "$$",
+            "cuisine": "Pubs, Music Venues, American",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -455,6 +623,9 @@
             "long": -71.096453,
             "metadata": [],
             "name": "Jaju Pierogi",
+            "rating": 4,
+            "price": "NA",
+            "cuisine": "Specialty Food, Polish",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -463,6 +634,9 @@
             "long": -71.089266,
             "metadata": [],
             "name": "Somerville Brewing Company (Slumbrew) Brewery and Taproom",
+            "rating": 3.5,
+            "price": "$$",
+            "cuisine": "Breweries, American (Traditional)",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -471,6 +645,9 @@
             "long": -71.078248,
             "metadata": [],
             "name": "American Fresh Brewhouse",
+            "rating": 3.5,
+            "price": "$$",
+            "cuisine": "Brewpubs",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -479,6 +656,9 @@
             "long": -71.123977,
             "metadata": [],
             "name": "Au Bon Pain Davis Square",
+            "rating": 3,
+            "price": "$",
+            "cuisine": "Bakeries, Cafes, Breakfast & Brunch",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -487,6 +667,9 @@
             "long": -71.107469,
             "metadata": [],
             "name": "O’Leary’s",
+            "rating": 4,
+            "price": "$$",
+            "cuisine": "Irish, Pubs",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -495,6 +678,9 @@
             "long": -71.125498,
             "metadata": [],
             "name": "Anna's Taqueria original location",
+            "rating": 3.5,
+            "price": "$$",
+            "cuisine": "Mexican",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -503,6 +689,9 @@
             "long": -71.121794,
             "metadata": [],
             "name": "Love Art Udon",
+            "rating": 4,
+            "price": "$$",
+            "cuisine": "Japanese, Noodles",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -511,6 +700,9 @@
             "long": -71.127322,
             "metadata": [],
             "name": "True Bistro",
+            "rating": 4,
+            "price": "$$",
+            "cuisine": "Vegan, Desserts, Breakfast & Brunch",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -519,6 +711,9 @@
             "long": -71.061620,
             "metadata": [],
             "name": "Stoddard's",
+            "rating": 3.5,
+            "price": "$$",
+            "cuisine": "American (Traditional), Gastropubs",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -527,6 +722,9 @@
             "long": -71.099630,
             "metadata": [],
             "name": "The Asgard",
+            "rating": 3,
+            "price": "$$",
+            "cuisine": "Pubs, Irish",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -535,6 +733,9 @@
             "long": -71.060230,
             "metadata": [],
             "name": "The Kinsale",
+            "rating": 3,
+            "price": "$$",
+            "cuisine": "Irish, Karaoke, Irish Pub",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -543,6 +744,9 @@
             "long": -71.073920,
             "metadata": [],
             "name": "Post 390",
+            "rating": 3.5,
+            "price": "$$$",
+            "cuisine": "Bars, American (New)",
             "size": "1"
         }, {
             "color": "#93366E",
@@ -551,6 +755,9 @@
             "long": -71.121760,
             "metadata": [],
             "name": "Taqueria el Barrio",
+            "rating": 4,
+            "price": "$$$",
+            "cuisine": "Mexican",
             "size": "1"
         }]
     
