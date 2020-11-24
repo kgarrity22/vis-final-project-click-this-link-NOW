@@ -29,6 +29,13 @@ d3.csv('data/yelp.csv', d => {
 
     // const locationChart = map(".chart3", data);
 
+    d3.selectAll("button")
+
+        .on("click", function(e, d){
+            
+            console.log("this: ", this.id)
+        })
+
     
 
 
