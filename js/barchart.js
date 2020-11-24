@@ -94,7 +94,7 @@ export default function barchart(container, yelp) {
             .text("Rating");
     }
     
-    return makeBarChart;
+    return makeBarChart(yelp);
 
   
 
