@@ -1,39 +1,13 @@
 //Vis for comparing cuisines and how many of each type there are
-export default function bubble(container, data) {
+export default function bubble(container, data, cuisines) {
     console.log("columns are: ", data.columns)
     console.log("example : ", data[0])
 
     var all_cuisines = []
-    var cuisines = {};
-    var all2 = [];
-
-    for (var item of data) {
-        var i = item.restaurant_tag;
-        if (i.includes(",")) {
-            var split = i.split(",");
-            //console.log("split: ", split)
-            for (var j of split) {
-                if (all2.indexOf(j) == -1) {
-                    all2.push(j);
-                    cuisines[j] = 1;
-                } else {
-                    cuisines[j] +=1;
-                }
-            }
-        } else {
-            if (all2.indexOf(i) == -1) {
-                all2.push(i);
-                cuisines[i] = 1;
-            } else {
-                cuisines[i] += 1;
-            }
-        }
-        
-        
-    }
+    
     //console.log("list of cuisines: ", all_cuisines)
     console.log("CUISINES: ", cuisines)
-    console.log("ALL: ", all2)
+    //console.log("ALL: ", all2)
     
     //console.log(Object.keys(cuisines))
     for (var i of Object.keys(cuisines)){

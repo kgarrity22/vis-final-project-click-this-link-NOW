@@ -21,19 +21,104 @@ d3.csv('data/yelp.csv', d => {
 }).then(data => {
     console.log("data: ", data);
 
+    var cuisines = {};
+    var all2 = [];
+
+    for (var item of data) {
+        var i = item.restaurant_tag;
+        if (i.includes(",")) {
+            var split = i.split(",");
+            //console.log("split: ", split)
+            for (var j of split) {
+                if (all2.indexOf(j) == -1) {
+                    all2.push(j);
+                    cuisines[j] = 1;
+                } else {
+                    cuisines[j] += 1;
+                }
+            }
+        } else {
+            if (all2.indexOf(i) == -1) {
+                all2.push(i);
+                cuisines[i] = 1;
+            } else {
+                cuisines[i] += 1;
+            }
+        }
+    }
+
     const ratingChart = barchart(".chart2", data);
 
     const covidChart = CovidMap(".chart4", data);
 
-    const cuisineChart = bubble(".chart1", data);
+    const cuisineChart = bubble(".bubble-chart", data, cuisines);
 
     // const locationChart = map(".chart3", data);
 
     d3.selectAll("button")
 
         .on("click", function(e, d){
+
+            d3.selectAll(".bubble-chart")
+                .remove()
+            
+            d3.select(".chart1")
+                .append("div")
+                .attr("class", "bubble-chart")
+
+
             
             console.log("this: ", this.id)
+            if (this.id == "Cuisines"){
+                var cuisines = {};
+                var all2 = [];
+
+                for (var item of data) {
+                    //console.log("MADE IT HERE!!")
+                    var i = item.restaurant_tag;
+                    if (i.includes(",")) {
+                        var split = i.split(",");
+                        //console.log("split: ", split)
+                        for (var j of split) {
+                            if (all2.indexOf(j) == -1) {
+                                all2.push(j);
+                                cuisines[j] = 1;
+                            } else {
+                                cuisines[j] += 1;
+                            }
+                        }
+                    } else {
+                        if (all2.indexOf(i) == -1) {
+                            all2.push(i);
+                            cuisines[i] = 1;
+                        } else {
+                            cuisines[i] += 1;
+                        }
+                    }
+                }
+                const cuisineChart = bubble(".bubble-chart", data, cuisines);
+                //console.log("cuisine chart is: ", cuisineChart)
+
+            } else if (this.id == "Neighborhood"){
+                var neighborhoods = {};
+                var all2 = [];
+                
+                for (var item of data) {
+                    var i = item.restaurant_neighborhood;
+                    if (i=="Boston"){
+                        i = "Downtown Boston";
+                    }
+                    
+                    if (all2.indexOf(i) == -1) {
+                        all2.push(i);
+                        neighborhoods[i] = 1;
+                    } else {
+                            neighborhoods[i] += 1;
+                    }
+                }
+
+                const neighborhoodChart = bubble(".bubble-chart", data, neighborhoods);
+            }
         })
 
     
