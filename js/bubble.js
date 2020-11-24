@@ -113,6 +113,63 @@ export default function bubble(container, data) {
             return d.r / 4;
         })
         .attr("fill", "black");
+    
+    node.on("mouseover", function (e, d) {
+        //console.log("d: ", d, " e : ", e)
+        d3.select('#bubble-tooltip')
+            .attr("opacity", 1)
+            .attr("display", "block")
+            .html(`${d.data.type}<br>${d.data.val}`)
+            .style("left", (e.screenX - 100 + "px"))
+            .style("font-family", "Gill Sans")
+            .style("font-size", "12px")
+            .style("background-color", "white")
+            .style("opacity", 0.9)
+            .style("color", "black")
+            .style("top", (e.screenY - 170 + "px"))
+        })
+        .on("mouseout", function (e, d) {
+            d3.select('#bubble-tooltip')
+                .html(``)
+                .attr("display", "none")
+                
+        })
+        .on("click", function(e, d){
+            d3.selectAll(".node")
+                .attr("opacity", 0.5)
+                .transition()
+                .duration(3000)
+            d3.select(this)
+                .attr("opacity", 1)
+
+                // .remove()
+                // .transition()
+                // .duration(2000)
+                
+                // .exit()
+        })
+        .on("dblclick", function (e, d) {
+            d3.selectAll(".node")
+                .attr("opacity", 1)
+                .transition()
+                .duration(3000)
+            
+
+            // .remove()
+            // .transition()
+            // .duration(2000)
+
+            // .exit()
+        })
+
+    // function update(_data){
+    //     data = _data
+    // }
+    
+    // return {
+    //     update,
+        
+    // }
 
     
     
