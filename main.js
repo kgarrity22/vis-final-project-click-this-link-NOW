@@ -21,13 +21,13 @@ d3.csv('data/yelp.csv', d => {
 }).then(data => {
     console.log("data: ", data);
 
-    const covidChart = CovidMap(".chart1", data);
+    const covidChart = CovidMap(".chart4", data);
 
     const cuisineChart = bubble(".chart2", data);
 
-    const locationChart = map(".chart3", data);
+    // const locationChart = map(".chart3", data);
 
-    const ratingChart = barchart(".chart4", data);
+    const ratingChart = barchart(".chart1", data);
 
 
 }); // end of csv parsing

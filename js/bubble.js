@@ -31,9 +31,25 @@ export default function bubble(container, data) {
         
         
     }
-    console.log("list of cuisines: ", all_cuisines)
+    //console.log("list of cuisines: ", all_cuisines)
     console.log("CUISINES: ", cuisines)
     console.log("ALL: ", all2)
+    
+    //console.log(Object.keys(cuisines))
+    for (var i of Object.keys(cuisines)){
+        if (i !== ""){
+            var new_dict = {};
+            new_dict["type"] = i;
+            new_dict["val"] = cuisines[i];
+            all_cuisines.push(new_dict)
+        }
+        
+    }
+    console.log("list of cuisines: ", all_cuisines)
+
+    var dataset = {};
+    dataset["children"] = all_cuisines
+    console.log("SET UP DATASET: ", dataset)
 
     const margin = ({ top: 50, right: 50, bottom: 50, left: 50 })
     const width = 1000 - margin.left - margin.right,
@@ -46,7 +62,8 @@ export default function bubble(container, data) {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    // var color = d3.scaleOrdinal(d3.schemeCategory20);
+    let color = d3.scaleOrdinal()
+        .range(d3.schemeSet3)
 
     var diameter = 600;
 
@@ -54,27 +71,31 @@ export default function bubble(container, data) {
         .size([diameter, diameter])
         .padding(1.5);
     
-    var nodes = d3.hierarchy(data)
+    var nodes = d3.hierarchy(dataset)
         .sum(function (d) { 
-            console.log("D: ", d)
-            
-            return d.Count; 
+            // console.log("D: ", d)
+            return d.val
         });
 
+    console.log("NODES: ", nodes)
+
+    
     var node = svg.selectAll(".node")
         .data(bubble(nodes).descendants())
         .enter()
         .filter(function (d) {
-            return !d.children
+            return !d.children;
         })
         .append("g")
         .attr("class", "node")
         .attr("transform", function (d) {
+            console.log("d! in here!: ", d)
             return "translate(" + d.x + "," + d.y + ")";
         });
 
     node.append("circle")
         .attr("r", function (d) {
+            console.log("radius d: ", d)
             return d.r;
         })
         .style("fill", function (d, i) {

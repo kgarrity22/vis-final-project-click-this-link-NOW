@@ -1,6 +1,7 @@
 //vis for comparing ratings of restaurants -- what are the best restaurants
 
 export default function barchart(container, yelp) {
+    console.log("!!!!!!!!!!!!HERE!!!!!!!!!!!!!!")
 
     console.log(yelp)
 
@@ -92,8 +93,8 @@ export default function barchart(container, yelp) {
             .attr("dy", ".75em")
             .text("Rating");
     }
-
-    makeBarChart(yelp);
+    
+    return makeBarChart;
 
   
 
