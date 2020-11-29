@@ -92,12 +92,9 @@ export default function bars(container, data) {
 
     const xAxis = d3.scaleBand()
         .range([0, width])
-        .domain(data.map(function (d) { 
-            if (d.restaurant_neighborhood !== "NA" && d.restaurant_neighborhood !== "San Francisco" && d.restaurant_neighborhood !== "Hudson" &&
-                d.restaurant_neighborhood !== "Hudson" && d.restaurant_neighborhood !== "Pembroke" && d.restaurant_neighborhood !== "North Waltham") {
-                return d.restaurant_neighborhood
-            } 
-        }))
+        .domain((bars_data.map(function(d){
+            return d.neighborhood
+        })).sort())
         .padding(0.2);
 
     svg.append("g")
