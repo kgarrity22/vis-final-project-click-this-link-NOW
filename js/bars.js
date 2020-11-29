@@ -1,3 +1,5 @@
+import bubble from './bubble.js';
+
 export default function bars(container, data) {
 
     // eliminate the empty / bad data points (no reviews, no location)
@@ -67,7 +69,7 @@ export default function bars(container, data) {
         }
     });
 
-    console.log("can we see the number of restaurants in each: ", neighborhood_nums)
+    //console.log("can we see the number of restaurants in each: ", neighborhood_nums)
     var bars_data = [];
     for (var i = 0; i<Object.keys(neighborhood_nums).length; i++){
         //console.log("iii: ", i)
@@ -77,7 +79,7 @@ export default function bars(container, data) {
         // new_dict[Object.keys(neighborhood_nums)[i]] = Object.values(neighborhood_nums)[i]
         bars_data.push(new_dict)
     }
-    console.log("bars data: ", bars_data)
+    //console.log("bars data: ", bars_data)
 
     
     
@@ -113,25 +115,39 @@ export default function bars(container, data) {
             .call(d3.axisLeft(yAxis));
 
         
-        console.log("RIGHT BEFORE BARS")
+        //console.log("RIGHT BEFORE BARS")
+
+    const bars = svg.selectAll('.bars')
+        .data(bars_data)
+
+    
+
+    bars.exit()
+        .remove()
 
 
+    bars.enter()
+        .append("rect")
+        .attr("class", "bars")
+        .merge(bars)
+        .transition()
+        .duration(1000)
+        .attr("x", function (d, i) {
+            //console.log("figuring out the bar height: ", d)
+            return xAxis(d.neighborhood);
+        })
+        .attr("y", function (d) { return yAxis(d.rest_num); })
+        .attr("width", xAxis.bandwidth())
+        .attr("height", function (d) { return height - yAxis(d.rest_num); })
+        .attr("fill", "pink")
+
+    
         
-        svg.selectAll(".bar")
-            .data(bars_data)
-            .enter()
-            .append("rect")
-            .attr("x", function (d, i) { 
-                //console.log("figuring out the bar height: ", d)
-                return xAxis(d.neighborhood); 
-            })
-            .attr("y", function (d) { return yAxis(d.rest_num); })
-            .attr("width", xAxis.bandwidth())
-            .attr("height", function (d) { return height - yAxis(d.rest_num); })
-            .attr("fill", "#69b3a2")
-            .on('mouseover', function(e, d){
-                d3.select('#bar-tooltip')
-                    .attr("opacity", 1)
+        
+            
+        d3.selectAll("rect").on('mouseover', function(e, d){
+            d3.select('#bar-tooltip')
+                .attr("opacity", 1)
                     .attr("display", "block")
                     .html(`${d.neighborhood}<br>${d.rest_num}`)
                     .style("left", (e.screenX - 100 + "px"))
@@ -149,8 +165,28 @@ export default function bars(container, data) {
                 .html(``)
                 .attr("display", "none")
             })
-            // .on('mousemove', mousemove)
-            // .on('mouseout', mouseout);
+        .on("click", function (e, d) {
+            console.log("checking if this click works: ", e, " ", d)
+            d3.select("svg")
+                .attr("class", "hidden")
+                .transition()
+                .duration(2000)
+            d3.select("svg")
+                .remove()
+            
+            
+            var bubble_data = new_data.filter(function(b){
+                if (b.restaurant_neighborhood == d.neighborhood) {
+                    //console.log(b.restaurant_neighborhood)
+                    //console.log(d.neighborhood)
+                    return b
+                }
+            })
+            console.log("checking on the data being passed into the bubble function: ", bubble_data)
+            const neighborhoodChart = bubble("#bubble-chart", bubble_data);
+            
+    })
+            
 
         svg.append("text")
             .attr("class", "x label")
@@ -165,28 +201,11 @@ export default function bars(container, data) {
             .attr("y", -27)
             .attr("x", 25)
             .attr("dy", ".75em")
-            .text("Rating");
+            .text("Number of Restaurants");
 
-    //tooltip
-    const div = d3.select('.chart4').append('div')
-        .attr('class', 'tooltip')
-        .style('display', 'none');
+    
 
-    function mouseover() {
-        div.style('display', 'block');
-    }
-
-    function mousemove() {
-        const d = d3.select(this).data()[0]
-        div
-            .html(d.restaurant_name + '<hr/>' + d.rating);
-        // .style('left', (d3.event.pageX - 34) + 'px')
-        // .style('top', (d3.event.pageY - 12) + 'px');
-    }
-
-    function mouseout() {
-        div.style('display', 'none');
-    }
+    
     
 
 

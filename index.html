@@ -40,14 +40,17 @@
         </ul>
     </nav>
 
-    <p>This is our project prototype. As we continue to develop this, we plan to add more interaction between the visualizations.</p>
+    <p>Click on a bar to get more info about restaurants in a particular neighborhood!</p>
 
     <!-- place holder divs for the charts -->
     <div class="all-charts">
 
         <div class="chart1">
-            <div class="toggle-bubble">
-                
+            <div id="barchart1">
+                <div id="bar-tooltip"></div>
+            </div>
+
+            <div id="bubble-chart" class="hidden">
                 <div id="toolbar">
                     <button id="all" class="button active">All</button>
                     <button id="Price" class="button">By Price</button>
@@ -56,10 +59,16 @@
                     <button id="Num_Reviews" class="button">By Number of Reviews</button>
                 
                 </div>
-
-                <div class="bubble-chart"></div>
-
+                <div id="bubble-tooltip"></div>
             </div>
+
+            
+                
+                
+
+                
+
+           
             
             <!-- <label class="switch">
                 <input type="checkbox">
@@ -68,9 +77,7 @@
             </label> -->
         </div>
 
-        <div class="chart1">
-            <div id="bar-tooltip"></div>
-        </div>
+        
 
         <div class="chart2"></div>
 

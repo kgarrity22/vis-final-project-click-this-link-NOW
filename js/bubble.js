@@ -1,18 +1,20 @@
 
-export default function bubble(container, data, cuisines) {
+export default function bubble(container, data) {
+    console.log("data entered into bubble: ", data)
+
+    d3.selectAll(container)
+        .attr("class", "visible")
     
     //console.log("DATA: ", data)
     var neighborhoods = [];
-    var new_data = [];
+    // var new_data = [];
     for (var i of data){
         if (neighborhoods.indexOf(i.restaurant_neighborhood) == -1) {
             neighborhoods.push(i.restaurant_neighborhood)
         }
-        if (i.review_number !== 0){
-            new_data.push(i)
-        }
     }
-    console.log("neighborhoods: ", neighborhoods)
+    //console.log("neighborhoods: ", neighborhoods)
+    //console.log("seeing if new data is different from old: ", new_data)
 
     
 
@@ -25,44 +27,30 @@ export default function bubble(container, data, cuisines) {
     
     var neighborhood0 = [];
     var neighborhood2 = [];
-    new_data.forEach(function (d) {
+    data.forEach(function (d) {
         d.r = (d.rating+1)/2;
         d.x = width / 2;
         d.y = height / 2;
 
-        if(d.restaurant_neighborhood == neighborhoods[0]){
-            neighborhood0.push(d)
-        }
-        if (d.restaurant_neighborhood == neighborhoods[1]) {
-            neighborhood2.push(d)
-        }
+        // if(d.restaurant_neighborhood == neighborhoods[0]){
+        //     neighborhood0.push(d)
+        // }
+        // if (d.restaurant_neighborhood == neighborhoods[1]) {
+        //     neighborhood2.push(d)
+        // }
     })
-    console.log("updated data, hoping that its smaller: ", new_data)
-    console.log("neighborhood: ", neighborhood2)
+    // console.log("updated data, hoping that its smaller: ", new_data)
+    //console.log("neighborhood: ", neighborhood2)
 
     
     
 
     var all_cuisines = []
     
-    // console.log("list of cuisines: ", all_cuisines)
-    //console.log("CUISINES: ", cuisines)
-    // console.log("ALL: ", all2)
     
-    //console.log(Object.keys(cuisines))
-    for (var i of Object.keys(cuisines)){
-        if (i !== ""){
-            var new_dict = {};
-            new_dict["type"] = i;
-            new_dict["val"] = cuisines[i];
-            all_cuisines.push(new_dict)
-        }
-        
-    }
-    // console.log("list of cuisines: ", all_cuisines)
 
     var dataset = {};
-    dataset["children"] = new_data;
+    //dataset["children"] = new_data;
     //console.log("SET UP DATASET: ", dataset)
 
     
@@ -72,7 +60,7 @@ export default function bubble(container, data, cuisines) {
     
 
     
-    let svg = d3.select(container).append("svg")
+    let svg = d3.selectAll(container).append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
@@ -84,7 +72,7 @@ export default function bubble(container, data, cuisines) {
 
     var simulation = d3.forceSimulation()
         .force("collide", d3.forceCollide(function (d) {
-            return d.r/4 
+            return d.r
         }).iterations(16)
         )
         .force("charge", d3.forceManyBody())
@@ -95,7 +83,7 @@ export default function bubble(container, data, cuisines) {
 
     
     var circles = svg.selectAll("circle")
-        .data(neighborhood2, function (d) { return d; })
+        .data(data, function (d) { return d; })
     console.log("CIRCLES: ", circles)
         
 
@@ -124,7 +112,7 @@ export default function bubble(container, data, cuisines) {
     }
 
     simulation
-        .nodes(neighborhood2)
+        .nodes(data)
         .on("tick", ticked);
 
     // function dragstarted(d, i) {

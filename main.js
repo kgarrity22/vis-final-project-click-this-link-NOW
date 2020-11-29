@@ -99,7 +99,7 @@ d3.csv('data/yelp.csv', d => {
                         }
                     }
                 }
-                const cuisineChart = bubble(".bubble-chart", data, cuisines);
+                //const cuisineChart = bubble(".bubble-chart", data, cuisines);
                 //console.log("cuisine chart is: ", cuisineChart)
 
             } else if (this.id == "Neighborhood"){
