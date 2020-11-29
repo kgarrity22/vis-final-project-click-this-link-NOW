@@ -5,16 +5,15 @@ export default function bubble(container, data) {
     d3.selectAll(container)
         .attr("class", "visible")
     
-    //console.log("DATA: ", data)
+    
     var neighborhoods = [];
-    // var new_data = [];
+    
     for (var i of data){
         if (neighborhoods.indexOf(i.restaurant_neighborhood) == -1) {
             neighborhoods.push(i.restaurant_neighborhood)
         }
     }
-    //console.log("neighborhoods: ", neighborhoods)
-    //console.log("seeing if new data is different from old: ", new_data)
+    
 
     
 
@@ -28,30 +27,15 @@ export default function bubble(container, data) {
     var neighborhood0 = [];
     var neighborhood2 = [];
     data.forEach(function (d) {
-        d.r = (d.rating+1)/2;
+        d.r = d.rating**1.5 + 1;
         d.x = width / 2;
         d.y = height / 2;
 
-        // if(d.restaurant_neighborhood == neighborhoods[0]){
-        //     neighborhood0.push(d)
-        // }
-        // if (d.restaurant_neighborhood == neighborhoods[1]) {
-        //     neighborhood2.push(d)
-        // }
+        
     })
-    // console.log("updated data, hoping that its smaller: ", new_data)
-    //console.log("neighborhood: ", neighborhood2)
-
     
     
-
-    var all_cuisines = []
     
-    
-
-    var dataset = {};
-    //dataset["children"] = new_data;
-    //console.log("SET UP DATASET: ", dataset)
 
     
     var centerScale = d3.scalePoint().padding(1).range([0, width]);
@@ -66,9 +50,8 @@ export default function bubble(container, data) {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    let color = d3.scaleOrdinal()
-        .domain(neighborhoods)
-        .range(d3.schemeSet3)
+    var color = d3.scaleSequential().domain([0, 3000])
+        .interpolator(d3.interpolateYlOrRd);
 
     var simulation = d3.forceSimulation()
         .force("collide", d3.forceCollide(function (d) {
@@ -84,14 +67,14 @@ export default function bubble(container, data) {
     
     var circles = svg.selectAll("circle")
         .data(data, function (d) { return d; })
-    console.log("CIRCLES: ", circles)
+    
         
 
     var circlesEnter = circles.enter().append("circle")
-        .attr("r", function (d, i) { return d.r; })
+        .attr("r", function (d, i) { return d.r })
         .attr("cx", function (d, i) { return 175 + 25 * i + 2 * i ** 2; })
         .attr("cy", function (d, i) { return 250; })
-        .style("fill", function (d, i) { return color(d.restaurant_neighborhood); })
+        .style("fill", function (d, i) { return color(d.review_number); })
         .style("stroke", "black")
         .style("stroke-width", 2)
         .style("pointer-events", "all")
@@ -101,6 +84,29 @@ export default function bubble(container, data) {
         //     .on("end", dragended));
 
     circles = circles.merge(circlesEnter)
+
+    circles.on("mouseover", function (e, d) {
+        //console.log("d: ", d, " e : ", e)
+        d3.select('#bubble-tooltip')
+            .attr("opacity", 1)
+            .attr("display", "block")
+            .html(`Name: ${d.restaurant_name}<br>Rating: ${d.rating}<br>Number of Reviews: ${d.review_number}<br>Cuisin Type: ${d.restaurant_tag}`)
+            .style("left", (e.screenX - 100 + "px"))
+            .style("font-family", "Gill Sans")
+            .style("font-size", "12px")
+            .style("background-color", "white")
+            .style("opacity", 0.9)
+            .style("color", "black")
+            .style("top", (e.screenY - 170 + "px"))
+
+
+        })
+        .on("mouseout", function (e, d) {
+            d3.select('#bubble-tooltip')
+                .html(``)
+                .attr("display", "none")
+
+        })
 
 
     function ticked() {
@@ -174,50 +180,50 @@ export default function bubble(container, data) {
         simulation.alpha(2).restart();
     }
 
-    // function hideTitles() {
-    //     svg.selectAll('.title').remove();
-    // }
+    function hideTitles() {
+        svg.selectAll('.title').remove();
+    }
 
-    // function showTitles(byVar, scale) {
-    //     // Another way to do this would be to create
-    //     // the year texts once and then just hide them.
-    //     var titles = svg.selectAll('.title')
-    //         .data(scale.domain());
+    function showTitles(byVar, scale) {
+        // Another way to do this would be to create
+        // the year texts once and then just hide them.
+        var titles = svg.selectAll('.title')
+            .data(scale.domain());
 
-    //     titles.enter().append('text')
-    //         .attr('class', 'title')
-    //         .merge(titles)
-    //         .attr('x', function (d) { return scale(d); })
-    //         .attr('y', 40)
-    //         .attr('text-anchor', 'middle')
-    //         .text(function (d) { return byVar + ' ' + d; });
+        titles.enter().append('text')
+            .attr('class', 'title')
+            .merge(titles)
+            .attr('x', function (d) { return scale(d); })
+            .attr('y', 40)
+            .attr('text-anchor', 'middle')
+            .text(function (d) { return byVar + ' ' + d; });
 
-    //     titles.exit().remove()
-    // }
+        titles.exit().remove()
+    }
 
-    // function setupButtons() {
-    //     d3.selectAll('.button')
-    //         .on('click', function () {
+    function setupButtons() {
+        d3.selectAll('.button')
+            .on('click', function () {
 
-    //             // Remove active class from all buttons
-    //             d3.selectAll('.button').classed('active', false);
-    //             // Find the button just clicked
-    //             var button = d3.select(this);
+                // Remove active class from all buttons
+                d3.selectAll('.button').classed('active', false);
+                // Find the button just clicked
+                var button = d3.select(this);
 
-    //             // Set it as the active button
-    //             button.classed('active', true);
+                // Set it as the active button
+                button.classed('active', true);
 
-    //             // Get the id of the button
-    //             var buttonId = button.attr('id');
+                // Get the id of the button
+                var buttonId = button.attr('id');
 
-    //             console.log(buttonId)
-    //             // Toggle the bubble chart based on
-    //             // the currently clicked button.
-    //             splitBubbles(buttonId);
-    //         });
-    // }
+                console.log(buttonId)
+                // Toggle the bubble chart based on
+                // the currently clicked button.
+                splitBubbles(buttonId);
+            });
+    }
 
-    // setupButtons()
+    setupButtons()
 
 
     
