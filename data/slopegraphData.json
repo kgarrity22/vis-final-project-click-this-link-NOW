@@ -1,0 +1,308 @@
+[
+  {
+    "cuisineName": "American (New)",
+    "values": [3.53,3.69],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "American (Traditional)",
+    "values": [3.37,3.23],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Bakeries",
+    "values": [3.86,3.67],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Bars",
+    "values": [3.63,3.31],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Basque",
+    "values": [4,3.5],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "Yes"
+  },
+  {
+    "cuisineName": "Beer Bar",
+    "values": [3.5,2.5],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "Yes"
+  },
+  {
+    "cuisineName": "Breakfast & Brunch",
+    "values": [3.69,3.71],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Breweries",
+    "values": [3.58,3.5],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Brewpubs",
+    "values": [3.33,3.5],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Burgers",
+    "values": [3.08,3.2],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Cafes",
+    "values": [3.66,3.5],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Caterers",
+    "values": [4,5],
+    "qualityEliminated": "Better",
+    "mostDrastic": "Yes"
+  },
+  {
+    "cuisineName": "Cocktail Bars",
+    "values": [3.74,4.1],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Coffee & Tea",
+    "values": [3.53,3.64],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Cooking Classes",
+    "values": [4.25,4],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Delis",
+    "values": [3.88,4],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Desserts",
+    "values": [3.76,4.25],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Diners",
+    "values": [3.71,3.75],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Dive Bars",
+    "values": [3.6,3.5],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "French",
+    "values": [3.9,3.25],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "Yes"
+  },
+  {
+    "cuisineName": "Gastropubs",
+    "values": [3.68,3.25],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Gluten-Free",
+    "values": [3.58,2.5],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "Yes"
+  },
+  {
+    "cuisineName": "Ice Cream & Frozen Yogurt",
+    "values": [3.52,3],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "Yes"
+  },
+  {
+    "cuisineName": "Irish",
+    "values": [4.3,3.42],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "Yes"
+  },
+  {
+    "cuisineName": "Irish Pub",
+    "values": [3.5,3.25],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Italian",
+    "values": [3.68,3.86],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Japanese",
+    "values": [3.7,4],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Jazz & Blues",
+    "values": [3.5,3.5],
+    "qualityEliminated": "Neutral",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Karaoke",
+    "values": [3,3],
+    "qualityEliminated": "Neutral",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Latin American",
+    "values": [3.63,4],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Lounges",
+    "values": [3.44,3.5],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Mexican",
+    "values": [3.47,3.75],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Music Venues",
+    "values": [3.42,4.5],
+    "qualityEliminated": "Better",
+    "mostDrastic": "Yes"
+  },
+  {
+    "cuisineName": "Noodles",
+    "values": [3.56,4],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Pizza",
+    "values": [3.2,3.17],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Polish",
+    "values": [4.5,4],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "Yes"
+  },
+  {
+    "cuisineName": "Pool Halls",
+    "values": [3,3.5],
+    "qualityEliminated": "Better",
+    "mostDrastic": "Yes"
+  },
+  {
+    "cuisineName": "Pubs",
+    "values": [3.42,3.5],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Salad",
+    "values": [3.52,3.25],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Sandwiches",
+    "values": [3.41,3.7],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Seafood",
+    "values": [3.75,3.56],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Southern",
+    "values": [3.5,4],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Spanish",
+    "values": [3.85,3.5],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Specialty Food",
+    "values": [4.25,4],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Sports Bars",
+    "values": [3.29,3.5],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Steakhouses",
+    "values": [3.67,4],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Tapas/Small Plates",
+    "values": [3.82,4],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Vegan",
+    "values": [3.94,4],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Vietnamese",
+    "values": [3.7,4],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Whiskey Bars",
+    "values": [3,2.5],
+    "qualityEliminated": "Worse",
+    "mostDrastic": "No"
+  },
+  {
+    "cuisineName": "Wine Bars",
+    "values": [3.85,3.93],
+    "qualityEliminated": "Better",
+    "mostDrastic": "No"
+  }
+ ]

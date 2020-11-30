@@ -199,3 +199,12 @@ input:checked + .slider:before {
   opacity: 0;
   transition: visibility 0s 2s, opacity 2s linear;
 }
+
+circle.default {
+  fill: #ff0000;
+}
+
+h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
