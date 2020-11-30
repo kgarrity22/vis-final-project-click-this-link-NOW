@@ -122,16 +122,16 @@ export default function bars(container, data) {
         
         //console.log("RIGHT BEFORE BARS")
 
-    const bars = svg.selectAll('.bars')
+    const circles = svg.selectAll('.bars')
         .data(bars_data)
 
     
 
-    bars.exit()
+    circles.exit()
         .remove()
 
 
-    bars.enter()
+    circles.enter()
         .append("circle")
         .attr("cx", function (d,i) { return xAxis(d.neighborhood); } )
         .attr("cy", function (d,i) { return yAxis(d.rest_num); } )
