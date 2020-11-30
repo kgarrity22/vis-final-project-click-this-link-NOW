@@ -136,14 +136,14 @@ export default function bars(container, data) {
         .attr("cx", function (d,i) { return xAxis(d.neighborhood); } )
         .attr("cy", function (d,i) { return yAxis(d.rest_num); } )
         .attr("r", function (d,i) { 
-            if (d.avg_rating >3.8){
+            if (d.avg_rating >3.75){
                 return 20;
             }
-            else if (d.avg_rating > 3.4){
-                  return 8;
+            else if (d.avg_rating > 3.5){
+                  return 10;
             }
             else{
-                  return 1;
+                  return 3;
             }
         })
         //   .attr("r", 5)
@@ -206,8 +206,8 @@ export default function bars(container, data) {
         svg.append("text")
             .attr("class", "y label")
             .attr("text-anchor", "end")
-            .attr("y", -27)
-            .attr("x", 25)
+            .attr("y", -37)
+            .attr("x", 125)
             .attr("dy", ".75em")
             .text("Number of Restaurants");
 
