@@ -4,12 +4,20 @@ import bubble from './js/bubble.js';
 import map from './js/map.js';
 import map2 from './js/map2.js';
 import bars from './js/bars.js';
+import slopeGraph from './js/slopegraph.js';
 
 d3.json('data/closedRestaurants.json', d3.autoType).then(data=>{ 
 
     const closedRestaurantsChart = map2("closedRestaurantMap", data);
 
-}); // end of JSON parsing
+}); 
+
+d3.json('data/slopegraphData.json', d3.autoType).then(data=>{ 
+
+    const slopeGraphChart = slopeGraph(".slopeChart", data);
+
+}); 
+
 
 d3.json('data/yelpedited.geojson', d3.autoType).then(data=>{ 
 

@@ -60,12 +60,16 @@ export default function bars(container, data) {
         height = 600 - margin.top - margin.bottom;
 
     var neighborhood_nums = {}
+    var rate = {}
+
     new_data.forEach(function(d) {
         //console.log("is this working: ", d)
         if(d.restaurant_neighborhood in neighborhood_nums){
-            neighborhood_nums[d.restaurant_neighborhood] += 1
+            neighborhood_nums[d.restaurant_neighborhood] += 1;
+            rate[d.restaurant_neighborhood] += d.rating;
         } else {
             neighborhood_nums[d.restaurant_neighborhood] = 1
+            rate[d.restaurant_neighborhood] = d.rating;
         }
     });
 
@@ -76,10 +80,11 @@ export default function bars(container, data) {
         var new_dict = {}
         new_dict["neighborhood"] = Object.keys(neighborhood_nums)[i]
         new_dict["rest_num"] = Object.values(neighborhood_nums)[i]
+        new_dict["avg_rating"] = Object.values(rate)[i]/Object.values(neighborhood_nums)[i]
         // new_dict[Object.keys(neighborhood_nums)[i]] = Object.values(neighborhood_nums)[i]
         bars_data.push(new_dict)
     }
-    //console.log("bars data: ", bars_data)
+    console.log("bars data: ", bars_data)
 
     
     
@@ -117,35 +122,38 @@ export default function bars(container, data) {
         
         //console.log("RIGHT BEFORE BARS")
 
-    const bars = svg.selectAll('.bars')
+    const circles = svg.selectAll('.bars')
         .data(bars_data)
 
     
 
-    bars.exit()
+    circles.exit()
         .remove()
 
 
-    bars.enter()
-        .append("rect")
-        .attr("class", "bars")
-        .merge(bars)
-        .transition()
-        .duration(1000)
-        .attr("x", function (d, i) {
-            //console.log("figuring out the bar height: ", d)
-            return xAxis(d.neighborhood);
+    circles.enter()
+        .append("circle")
+        .attr("cx", function (d,i) { return xAxis(d.neighborhood); } )
+        .attr("cy", function (d,i) { return yAxis(d.rest_num); } )
+        .attr("r", function (d,i) { 
+            if (d.avg_rating >3.75){
+                return 20;
+            }
+            else if (d.avg_rating > 3.5){
+                  return 10;
+            }
+            else{
+                  return 3;
+            }
         })
-        .attr("y", function (d) { return yAxis(d.rest_num); })
-        .attr("width", xAxis.bandwidth())
-        .attr("height", function (d) { return height - yAxis(d.rest_num); })
-        .attr("fill", "pink")
-
-    
+        //   .attr("r", 5)
+        .style("fill", "pink")
+        .style("opacity", "0.7")
+        .attr("stroke", "black")
         
         
             
-        d3.selectAll("rect").on('mouseover', function(e, d){
+        d3.selectAll("circle").on('mouseover', function(e, d){
             d3.select('#bar-tooltip')
                 .attr("opacity", 1)
                     .attr("display", "block")
@@ -199,8 +207,8 @@ export default function bars(container, data) {
         svg.append("text")
             .attr("class", "y label")
             .attr("text-anchor", "end")
-            .attr("y", -27)
-            .attr("x", 25)
+            .attr("y", -37)
+            .attr("x", 125)
             .attr("dy", ".75em")
             .text("Number of Restaurants");
 

@@ -1,5 +1,7 @@
 export default function map2(HTMLcontainer, data) {
 
+        let changeColor = document.querySelector('#cuisine-category');
+
         console.log(data);
     
         let closedRestaurants = data.Restaurants;
@@ -30,11 +32,11 @@ export default function map2(HTMLcontainer, data) {
                         .data(closedRestaurants)
                         .enter()
                         .append("circle")
+                        .attr("class", "default")
                         .attr("r", 8)
                         .attr("stroke-width", 0.5)
                         .attr("stroke", "black")                
-                        .style("fill", "ff0000")
-                        .attr("fill-opacity", 0.7)
+                        .attr("fill-opacity", 0.8)
                         .on("mouseenter", (event, d) => {
                             // show the tooltip
                             const pos = d3.pointer(event, window);
@@ -79,7 +81,40 @@ export default function map2(HTMLcontainer, data) {
                 .attr("cy", function(d) {
                 return project(d).y;
                 });
-            }                     
+            }     
+            
+            
+        changeColor.addEventListener('change', (event) => {
+            let category = event.target.value;
+    
+            d3.selectAll("#closedRestaurantMap svg circle").classed("default", false);
+    
+    
+            console.log("CHANGE COLOR: ", category);  //debugging
+            dots.attr('fill', function(d){
+                if (category === "Select A Cuisine" || category === "Better Closed Restaurants" || category === "Worse Closed Restaurants"){
+                    return "#ff0000"
+                }
+                if(category === "Bars"){ // special case for bars
+                    if (d.cuisine.includes(category) && !d.cuisine.includes("Whiskey Bars") && 
+                       !d.cuisine.includes("Wine Bars") && !d.cuisine.includes("Sports Bars") &&
+                       !d.cuisine.includes("Dive Bars") && !d.cuisine.includes("Cocktail Bars")){  
+                        return "#E626AD";
+                    } else {
+                        return "#323233";
+                    }
+                }
+                else{
+                    if (d.cuisine.includes(category)){
+                        return "#E626AD";
+                    } else {
+                        return "#323233";
+                    }
+                }
+            })
+        });
+        
+
     
     };    
 
