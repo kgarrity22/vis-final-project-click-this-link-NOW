@@ -51,7 +51,7 @@ export default function bubble(container, data) {
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     var color = d3.scaleSequential().domain([0, 3000])
-        .interpolator(d3.interpolateYlOrRd);
+        .interpolator(d3.interpolateYlGnBu);
 
     var simulation = d3.forceSimulation()
         .force("collide", d3.forceCollide(function (d) {

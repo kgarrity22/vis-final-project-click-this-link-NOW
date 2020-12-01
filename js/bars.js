@@ -188,8 +188,9 @@ export default function bars(container, data) {
     })
             
 
-        svg.append("text")
+        svg.append("div")
             .attr("class", "x label")
+            .append("text")
             .attr("text-anchor", "end")
             .attr("x", width - 8)
             .attr("y", height - 6)
