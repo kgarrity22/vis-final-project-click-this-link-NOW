@@ -3,7 +3,7 @@ export default function lineChart(container, restuarant){
 
 
 
-    const margin = ({ top: 20, right: 20, bottom: 20, left: 20 })
+    const margin = ({ top: 20, right: 20, bottom: 20, left: 40 })
     const width = 500 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
