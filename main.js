@@ -2,14 +2,18 @@ import CovidMap from './js/CovidMap.js';
 import barchart from './js/barchart.js';
 import bubble from './js/bubble.js';
 import map from './js/map.js';
-import map2 from './js/map2.js';
+import closedRestaurant from './js/closedRestaurant.js';
 import bars from './js/bars.js';
 import slopeGraph from './js/slopegraph.js';
 import line from './js/line.js';
+import heatMap from './js/heatmap.js';
+
+//create heatmap, need to add button functionality to swap with other map
+heatMap("heatmap");
 
 d3.json('data/closedRestaurants.json', d3.autoType).then(data=>{ 
 
-    const closedRestaurantsChart = map2("closedRestaurantMap", data);
+    const closedRestaurantsChart = closedRestaurant("closedRestaurantMap", data);
 
 }); 
 

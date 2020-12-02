@@ -1,4 +1,4 @@
-export default function map2(HTMLcontainer, data) {
+export default function closedRestaurant(HTMLcontainer, data) {
 
         let changeColor = document.querySelector('#cuisine-category');
 
