@@ -1,3 +1,4 @@
+import lineChart from './line.js';
 
 export default function bubble(container, data) {
     console.log("data entered into bubble: ", data)
@@ -224,6 +225,22 @@ export default function bubble(container, data) {
     }
 
     setupButtons()
+
+    d3.selectAll("circle")
+        .on("click", function(e, d){
+            console.log("Event is: ", e)
+            console.log("data is: ", d)
+            
+
+            d3.select("svg")
+                .attr("class", "hidden")
+                .transition()
+                .duration(2000)
+            d3.select("svg")
+                .remove()
+            const line_chart = lineChart(".line-chart", d)
+
+        })
 
 
     

@@ -5,6 +5,7 @@ import map from './js/map.js';
 import map2 from './js/map2.js';
 import bars from './js/bars.js';
 import slopeGraph from './js/slopegraph.js';
+import line from './js/line.js';
 
 d3.json('data/closedRestaurants.json', d3.autoType).then(data=>{ 
 
@@ -61,6 +62,8 @@ d3.csv('data/yelp.csv', d => {
     const covidChart = CovidMap(".chart4", data);
 
     const bars_chart = bars(".chart1", data);
+
+    // const lineChart = line(".line-chart", data);
 
     //const cuisineChart = bubble(".bubble-chart", data, cuisines);
 
