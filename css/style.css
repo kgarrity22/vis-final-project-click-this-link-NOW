@@ -342,26 +342,7 @@ body {
     color: white;
 }
 
-#bubble-tooltip {
-    /* opacity: 0; */
-    display: none;
-    position: fixed;
-    border: 1px solid black;
-    border-radius: 15px;
-    padding: 5px;
-    
-}
-.bar-tooltip {
-    opacity: 0;
-    display: none;
-    position: fixed;
-    border: 1px solid black;
-    border-radius: 15px;
-    padding: 5px;
 
-
-
-}
 
 .switch {
   position: relative;
@@ -455,4 +436,26 @@ body{
   width: 1100px;
   height: 500px;
   margin-left: 155px;
+}
+
+
+#bubble-tooltip {
+    /* opacity: 0; */
+    /* display: none; */
+    position: fixed;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    
+}
+#bar-tooltip {
+    opacity: 0;
+    display: none;
+    position: fixed;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+
+
+
 }

@@ -153,24 +153,37 @@ export default function bars(container, data) {
         
         
             
-        d3.selectAll("circle").on('mouseover', function(e, d){
+        d3.selectAll("circle").on('mouseover', function(d){
+            // console.log("e in mouseover: ", e)
+            //console.log("D in mouseover: ", d)
+            //console.log("this: ", this)
+            //console.log("this: ", this.cx.animVal.value)
+            var tooltipx = this.cx.animVal.value;
+            var tooltipy = this.cy.animVal.value;
+
+            // d3.select(this)
+            //     .attr("id", )
+
             d3.select('#bar-tooltip')
                     .attr("opacity", 1)
                     .attr("display", "block")
                     .html(`Neighborhood: ${d.neighborhood}<br>Number of Restuarants: ${d.rest_num}<br> Avg. Rating: ${d.rating}`)
-                    .style("left", (e.screenX - 100 + "px"))
+                    .style("top", (tooltipx + "px"))
                     .style("font-family", "Gill Sans")
                     .style("font-size", "12px")
                     .style("background-color", "white")
                     .style("opacity", 0.9)
                     .style("color", "black")
-                    .style("top", (e.screenY - 170 + "px"))
+                    .style("left", (tooltipy + "px"))
                     .classed("hidden", false)
+                
+                
 
         })
         .on("mouseout", function (e, d) {
+            console.log("e: ", e)
+            console.log("D is: ", d)
             d3.select('#bar-tooltip')
-
                 .html(``)
                 .classed("hidden", true)
 
