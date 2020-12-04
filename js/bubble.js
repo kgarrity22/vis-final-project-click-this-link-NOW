@@ -99,14 +99,14 @@ export default function bubble(container, data) {
             .style("opacity", 0.9)
             .style("color", "black")
             .style("top", (e.screenY - 170 + "px"))
-
+            .classed("hidden", false)
 
         })
         .on("mouseout", function (e, d) {
             d3.select('#bubble-tooltip')
                 .html(``)
-                .attr("display", "none")
-
+                .classed("hidden", true)
+                
         })
 
 
