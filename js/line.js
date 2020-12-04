@@ -1,12 +1,9 @@
 export default function lineChart(container, restuarant){
     console.log("IS THE LINE CHART WORKING")
 
-
-
     const margin = ({ top: 20, right: 20, bottom: 20, left: 40 })
     const width = 500 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
-
 
     let svg = d3.select(container).append("svg")
         .attr("width", width + margin.left + margin.right)
@@ -14,10 +11,8 @@ export default function lineChart(container, restuarant){
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-
     var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"];
 
-    
     console.log("d is: ", restuarant)
     let just_dates = []
     // need a list of the months
@@ -38,9 +33,9 @@ export default function lineChart(container, restuarant){
             new_dict["year"] = year
             new_dict["reviews"] = reviews
             just_dates.push(new_dict)
-            
         }
     }
+
     console.log("just dates: ", just_dates)
     for (var i of just_dates){
         if (i.year == "19"){
@@ -50,13 +45,9 @@ export default function lineChart(container, restuarant){
         }
     }
 
-
-
-
         const xScale = d3.scaleBand()
             .domain(months)
             .range([0, width])
-
 
         const yScale = d3.scaleLinear()
             .domain(d3.extent(d3.map(just_dates, d => d.reviews)))
@@ -67,7 +58,6 @@ export default function lineChart(container, restuarant){
         let xAxis = d3.axisBottom()
             .scale(xScale)
             // .ticks(5, ",f");
-
 
         let yAxis = d3.axisLeft()
             .scale(yScale)
@@ -95,8 +85,6 @@ export default function lineChart(container, restuarant){
         //     .clone()
         //     .attr("x2", width)
         //     .attr("stroke-opacity", 0.1)
-
-
 
         svg.append("text")
             .attr("class", "y-label")
