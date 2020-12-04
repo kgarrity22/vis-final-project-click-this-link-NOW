@@ -155,9 +155,9 @@ export default function bars(container, data) {
             
         d3.selectAll("circle").on('mouseover', function(e, d){
             d3.select('#bar-tooltip')
-                .attr("opacity", 1)
+                    .attr("opacity", 1)
                     .attr("display", "block")
-                    .html(`${d.neighborhood}<br>${d.rest_num}`)
+                    .html(`Neighborhood: ${d.neighborhood}<br>Number of Restuarants: ${d.rest_num}<br> Avg. Rating: ${d.rating}`)
                     .style("left", (e.screenX - 100 + "px"))
                     .style("font-family", "Gill Sans")
                     .style("font-size", "12px")
@@ -170,8 +170,10 @@ export default function bars(container, data) {
         })
         .on("mouseout", function (e, d) {
             d3.select('#bar-tooltip')
+
                 .html(``)
                 .classed("hidden", true)
+
             })
         .on("click", function (e, d) {
             console.log("checking if this click works: ", e, " ", d)

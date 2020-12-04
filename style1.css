@@ -115,19 +115,34 @@ nav {
 }
 
 #bubble-tooltip {
-    opacity: 0;
+    /* opacity: 0; */
+    display: none;
     position: fixed;
     border: 1px solid black;
     border-radius: 15px;
     padding: 5px;
     
 }
-#bar-tooltip {
+.bar-tooltip {
     opacity: 0;
+    display: none;
     position: fixed;
     border: 1px solid black;
     border-radius: 15px;
     padding: 5px;
+
+
+  /* position: absolute;			
+    text-align: center;			
+    width: 60px;					
+    height: 28px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;	 */
+
     
 }
 
@@ -228,3 +243,4 @@ body{
   height: 500px;
   margin-left: 155px;
 }
+
