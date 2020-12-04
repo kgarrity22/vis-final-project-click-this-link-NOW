@@ -154,8 +154,8 @@ export default function bars(container, data) {
         
             
         d3.selectAll("circle").on('mouseover', function(d){
-            // console.log("e in mouseover: ", e)
-            //console.log("D in mouseover: ", d)
+            console.log("e in mouseover: ", e)
+            console.log("D in mouseover: ", d)
             //console.log("this: ", this)
             //console.log("this: ", this.cx.animVal.value)
             var tooltipx = this.cx.animVal.value;
@@ -188,7 +188,7 @@ export default function bars(container, data) {
                 .classed("hidden", true)
 
             })
-        .on("click", function (d) {
+        .on("click", function (e, d) {
             console.log("checking if this click works: ", d)
             d3.select("svg")
                 .attr("class", "hidden")
