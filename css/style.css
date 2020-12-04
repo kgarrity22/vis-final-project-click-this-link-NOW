@@ -1,0 +1,454 @@
+/* .hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  url("assets/boston-sunset.jpeg");
+  
+  height: 800px;
+  width: 100%;
+  margin: 0px;
+  /* height: 90%;
+  width: 100%; */
+  
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  
+  } */ 
+body {
+    background-color: #e5e5e5;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Playfair Display", serif;
+    color: black;
+    text-align: center;
+  }
+  
+  p {
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  b {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800;
+  }
+  
+  #covid-map {
+    text-align: center;
+    width: 100%;
+  }
+  
+  #page-end,
+  #page-intro {
+    text-align: center;
+  }
+  
+  #page-intro h1 {
+    margin-top: 20vh;
+  }
+  
+  #page-intro p {
+    width: 600px;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+
+  article,
+  aside,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  nav,
+  section {
+    display: block;
+  }
+  
+  body {
+    line-height: 1;
+  }
+  
+  ol,
+  ul {
+    list-style: none;
+  }
+  
+  blockquote,
+  q {
+    quotes: none;
+  }
+  
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: "";
+    content: none;
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  
+  h1 {
+    font-size: 60px;
+  }
+  
+  h3 {
+    font-size: 24px;
+  }
+  
+  a:link,
+  a:visited {
+    color: gray;
+    text-decoration: none;
+  }
+  
+  a:hover,
+  a:focus,
+  a:active {
+    text-decoration: none;
+  }
+  
+  .header {
+    padding-top: 75px;
+  }
+  
+  .scroll {
+    position: relative;
+    font-size: 60px;
+    margin-top: 10vh;
+    display: inline-block;
+    color: #739ce9 !important;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  
+    transition: ease-in-out 0.5s;
+  }
+  
+  .scroll:hover {
+    color: #739ce9 !important;
+    transition: ease-in-out 0.2s;
+  }
+  
+  @keyframes floating {
+    from {
+      transform: translate(0, 0px);
+    }
+  
+    65% {
+      transform: translate(0, 15px);
+    }
+  
+    to {
+      transform: translate(0, -0px);
+    }
+  }
+  
+  .tagline {
+    font-size: 2.3em;
+    letter-spacing: 0.02em;
+    padding: 0;
+  }
+  
+  pre {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2em 0 2em 0;
+    font-size: 2.1em;
+    margin-top: 0.7em;
+  }
+  
+  .return {
+    display: flex;
+    position: absolute;
+    width: 75px;
+    height: 100%;
+    /* transform: translateX(-12px); */
+  }
+  
+  .return a {
+    display: flex;
+    margin: auto;
+    font-size: 25px;
+    font-weight: 800;
+    background-color: none !important;
+    color: #739ce9;
+    transition: ease-in-out 0.25s;
+  }
+  
+  .return:hover {
+    background-color: #739ce9!important;
+    color: black;
+    transition: ease-in-out 0.25s;
+    cursor: pointer;
+  }
+  
+  .return:hover a {
+    color: black;
+  }
+  
+  .text-block {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 600px;
+    max-width: 90%;
+    line-height: 24px;
+  }
+  
+  .credits {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+  
+    color: gray;
+  }
+  
+  .credits a {
+    color: #739ce9;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .credits a:hover {
+    color: #739ce9;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .button {
+    color: #739ce9 !important;
+    border-color: #739ce9!important;
+  }
+  
+  .button:hover {
+    color: black !important;
+    background-color: #739ce9!important;
+    border-color: #739ce9 !important;
+  }
+  
+  .progress-container {
+    z-index: 15;
+    position: fixed;
+    width: 15px;
+    height: 100%;
+    background: #ccc;
+    /* right: 0; */
+    transform: translate(-12px, -172px);
+  }
+  
+  .progress-bar {
+    height: 8px;
+    background: #739ce9;
+    height: 0%;
+  }
+  
+  #conclusion {
+    margin-top: 50px;
+  }
+  
+  #thanks {
+    text-shadow: 3px 3px 0 #739ce9;
+  }
+  
+  .sort_text {
+    font-family: "Open Sans", sans-serif;
+    fill: darkslategrey;
+    opacity: 0.9;
+    font-size: 15px;
+  }
+
+  .bar:hover{
+    fill:rgb(22, 76, 255);
+}
+
+.tooltip{
+    position      : absolute;
+    text-align    : center;
+    max-width     : 70px;
+    max-height    : 30px;
+    padding       : 8px;
+    border        : none;
+    border-radius : 8px;
+    margin-top    : -30px;
+    font          : 10px sans-serif;
+    background    : black;
+    color         : white;
+    pointer-events: none;
+}
+
+#map {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 500px;
+  
+}
+
+.bar:hover{
+    fill:rgb(22, 76, 255)
+}
+
+
+/* stuff for closed Restaurants */
+
+#closedRestaurantMap {
+    position: relative;
+    z-index: 0;
+    height: 500px;
+    width: 1100px;
+    margin-left: 155px;
+  
+  }
+
+#closedRestaurantMapTooltip {
+    position: absolute;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background-color: black;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    opacity: 85%;
+}
+
+#closedRestaurantMapTooltip.hidden {
+    display: none;
+}
+
+#closedRestaurantMapTooltip p {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: white;
+}
+
+#bubble-tooltip {
+    opacity: 0;
+    position: fixed;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    
+}
+#bar-tooltip {
+    opacity: 0;
+    position: fixed;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .6s;
+  transition: .6s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color:lightblue;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px lightblue;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(265px);
+  -ms-transform: translateX(250px);
+  transform: translateX(265px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.chart2 {
+  width: 1200px;
+  overflow: auto;
+  border: 1px solid gray;
+  height: 800px;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+
+circle.default {
+  fill: #ff0000;
+}
+
+
+body{
+  background-color: rgb(255, 255, 255)
+}
+
+#heatmap {
+  width: 1100px;
+  height: 500px;
+  margin-left: 155px;
+}

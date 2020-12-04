@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Six+Caps&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <!-- 2 Scripts for Heatmap-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcSiCJy8smv6Omp8TMXFINgjXxqDQqvus&callback=initMap&libraries=visualization&v=weekly"
+      defer></script>
+
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="main.js" defer type="module"></script>
+
+</head>
+
+
+<body>
+
+    <div class="hero-image">
+        <div class="hero-text">
+            <header>Vis Final Project</header>
+        </div>
+    </div>
+
+
+
+    <!-- nav bar -->
+    <nav>
+        <ul>
+            <li>
+                <a class="about" href="about.html">About Our Project</a>
+            </li>
+
+        </ul>
+    </nav>
+
+    
+    <!-- place holder divs for the charts -->
+    <!-- 
+        *******************
+        Maybe, instead of removing graphs on click, it just adds the new graph below and pushes the screen down 
+        for the user so it's automatically the graph they're looking at
+        *******************
+     -->
+    <div class="all-charts">
+
+        
+
+        <div class="chart1">
+            <div id="barchart1">
+                <p>Click on a bubble to get more info about restaurants in a particular neighborhood!</p>
+
+                <div id="bar-tooltip"></div>
+            </div>
+
+            <div id="bubble-chart" class="hidden">
+                <div id="toolbar">
+                    <button id="all" class="button active">All</button>
+                    <button id="price" class="button">By Price</button>
+                    <button id="closed" class="button">By Open/Closed Status</button>
+                    <button id="restaurant_tag" class="button">By Cuisine</button>
+                    <button id="review_number" class="button">By Number of Reviews</button>
+                    <button id="rating" class="button">By Avg. Rating</button>
+
+                </div>
+                <div id="bubble-tooltip"></div>
+            </div>
+
+            <div class="line-chart" class="hidden"></div>
+
+
+
+            <!-- <label class="switch">
+                <input type="checkbox">
+                <span class="slider round">
+                </span>
+            </label> -->
+        </div>
+
+
+
+        <!-- <div class="chart2"></div> -->
+
+        <!-- <div class="chart3"></div> -->
+
+        <!-- <div id="map"></div> -->
+        <!-- temporary, will add filter button so these charts can be combined -->
+        <div id='heatmap'></div>
+        <div id='closedRestaurantMap'></div>
+        <div id="closedRestaurantMapTooltip" class="hidden"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <h3>How Cuisines Fared</h3>
+                    <p>Select different cuisines from the list below to see if the restaurants that closed
+                        already recieved above or below average Yelp reviews. This may give some indication of whether
+                        or not these businesses
+                        were already struggling before they were impacted by Covid restrictions. The most recent cuisine
+                        you select
+                        will highlight all the closed restaurants on the map above that served that particular cuisine.
+                        If the slope
+                        graph begins to get too crowded, simply click "reset."
+                    </p>
+                    <div class="user-control">
+                        <select id="cuisine-category" class="form-control">
+                            <option value="Select A Cuisine" selected>Select A Cuisine</option>
+                            <option value='Better Closed Restaurants'>Better Closed Restaurants</option>
+                            <option value='Worse Closed Restaurants'>Worse Closed Restaurants</option>
+                            <option value='Top 10 Most Drastic Change'>Top 10 Most Drastic Change</option>
+                            <option value='American (New)'>American (New)</option>
+                            <option value='American (Traditional)'>American (Traditional)</option>
+                            <option value='Bakeries'>Bakeries</option>
+                            <option value='Bars'>Bars</option>
+                            <option value='Basque'>Basque</option>
+                            <option value='Beer Bar'>Beer Bar</option>
+                            <option value='Breakfast & Brunch'>Breakfast & Brunch</option>
+                            <option value='Breweries'>Breweries</option>
+                            <option value='Brewpubs'>Brewpubs</option>
+                            <option value='Burgers'>Burgers</option>
+                            <option value='Cafes'>Cafes</option>
+                            <option value='Caterers'>Caterers</option>
+                            <option value='Cocktail Bars'>Cocktail Bars</option>
+                            <option value='Coffee & Tea'>Coffee & Tea</option>
+                            <option value='Cooking Classes'>Cooking Classes</option>
+                            <option value='Delis'>Delis</option>
+                            <option value='Desserts'>Desserts</option>
+                            <option value='Diners'>Diners</option>
+                            <option value='Dive Bars'>Dive Bars</option>
+                            <option value='French'>French</option>
+                            <option value='Gastropubs'>Gastropubs</option>
+                            <option value='Gluten-Free'>Gluten-Free</option>
+                            <option value='Ice Cream & Frozen Yogurt'>Ice Cream & Frozen Yogurt</option>
+                            <option value='Irish'>Irish</option>
+                            <option value='Irish Pub'>Irish Pub</option>
+                            <option value='Italian'>Italian</option>
+                            <option value='Japanese'>Japanese</option>
+                            <option value='Jazz & Blues'>Jazz & Blues</option>
+                            <option value='Karaoke'>Karaoke</option>
+                            <option value='Latin American'>Latin American</option>
+                            <option value='Lounges'>Lounges</option>
+                            <option value='Mexican'>Mexican</option>
+                            <option value='Music Venues'>Music Venues</option>
+                            <option value='Noodles'>Noodles</option>
+                            <option value='Pizza'>Pizza</option>
+                            <option value='Polish'>Polish</option>
+                            <option value='Pool Halls'>Pool Halls</option>
+                            <option value='Pubs'>Pubs</option>
+                            <option value='Salad'>Salad</option>
+                            <option value='Sandwiches'>Sandwiches</option>
+                            <option value='Seafood'>Seafood</option>
+                            <option value='Southern'>Southern</option>
+                            <option value='Spanish'>Spanish</option>
+                            <option value='Specialty Food'>Specialty Food</option>
+                            <option value='Sports Bars'>Sports Bars</option>
+                            <option value='Steakhouses'>Steakhouses</option>
+                            <option value='Tapas/Small Plates'>Tapas/Small Plates</option>
+                            <option value='Vegan'>Vegan</option>
+                            <option value='Vietnamese'>Vietnamese</option>
+                            <option value='Whiskey Bars'>Whiskey Bars</option>
+                            <option value='Wine Bars'>Wine Bars</option>
+                        </select>
+                        <a class="button" id="slopeGraphReset">Reset</a>
+                    </div>
+                    <div class='slopeChart'>
+                        <!-- slope chart SVG here-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart4"></div>
+
+        <!-- <div id="bubble-tooltip" class="hidden">
+        </div> -->
+
+        
+
+
+
+
+    </div>
+
+
+
+</body>
+
+</html>
