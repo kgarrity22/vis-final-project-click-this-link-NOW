@@ -450,7 +450,7 @@ body{
 }
 #bar-tooltip {
     opacity: 0;
-    display: none;
+    
     position: fixed;
     border: 1px solid black;
     border-radius: 15px;

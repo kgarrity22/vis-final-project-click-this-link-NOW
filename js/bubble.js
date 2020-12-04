@@ -227,7 +227,7 @@ export default function bubble(container, data) {
     setupButtons()
 
     d3.selectAll("circle")
-        .on("click", function(d){
+        .on("click", function(e, d){
             // console.log("Event is: ", e)
             // console.log("data is: ", d)
             
