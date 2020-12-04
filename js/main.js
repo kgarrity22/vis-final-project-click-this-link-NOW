@@ -1,7 +1,6 @@
 import CovidMap from './CovidMap.js';
 import barchart from './barchart.js';
 import bubble from './bubble.js';
-import map from './map.js';
 import closedRestaurant from './closedRestaurant.js';
 import bars from './bars.js';
 import slopeGraph from './slopegraph.js';
@@ -23,12 +22,6 @@ d3.json('data/slopegraphData.json', d3.autoType).then(data=>{
 
 }); 
 
-
-d3.json('data/yelpedited.geojson', d3.autoType).then(data=>{ 
-
-    const ratingRestaurantsChart = map("map", data);
-
-});
 
 d3.csv('data/yelp.csv', d => {
     return d3.autoType(d)
