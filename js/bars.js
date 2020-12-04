@@ -175,8 +175,8 @@ export default function bars(container, data) {
                 .classed("hidden", true)
 
             })
-        .on("click", function (e, d) {
-            console.log("checking if this click works: ", e, " ", d)
+        .on("click", function (d) {
+            console.log("checking if this click works: ", d)
             d3.select("svg")
                 .attr("class", "hidden")
                 .transition()
@@ -184,11 +184,15 @@ export default function bars(container, data) {
             d3.select("svg")
                 .remove()
             
+            //console.log("CLICKED AND NEW DATA IS: ", new_data)
+            
             
             var bubble_data = new_data.filter(function(b){
+                // console.log("D here is: ", d)
+                // console.log("B here is: ", b)
                 if (b.restaurant_neighborhood == d.neighborhood) {
-                    //console.log(b.restaurant_neighborhood)
-                    //console.log(d.neighborhood)
+                    // console.log(b.restaurant_neighborhood)
+                    // console.log(d.neighborhood)
                     return b
                 }
             })
