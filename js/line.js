@@ -1,5 +1,6 @@
 export default function lineChart(container, restuarant){
     console.log("IS THE LINE CHART WORKING")
+    console.log("REStauratns: ", restuarant)
 
     const margin = ({ top: 20, right: 20, bottom: 20, left: 40 })
     const width = 500 - margin.left - margin.right,
@@ -44,13 +45,20 @@ export default function lineChart(container, restuarant){
             line2020.push(i)
         }
     }
+    console.log("2019 DATA: ", line2019)
+    console.log("2020 DATA: ", line2020)
 
         const xScale = d3.scaleBand()
             .domain(months)
             .range([0, width])
+        
+        var ys = d3.extent(just_dates, function(d){
+            return d.reviews
+        })
+        console.log("test of y domain: ", ys)
 
         const yScale = d3.scaleLinear()
-            .domain(d3.extent(d3.map(just_dates, d => d.reviews)))
+            .domain(ys)
             .range([height, 0])
 
         console.log("YDOMAIN: ", yScale.domain())
