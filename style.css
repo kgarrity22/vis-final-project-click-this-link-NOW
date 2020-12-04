@@ -94,6 +94,14 @@ nav {
     opacity: 85%;
 }
 
+#bar-tooltip.hidden{
+  display: none;
+}
+
+#bubble-tooltip.hidden{
+  display: none;
+}
+
 #closedRestaurantMapTooltip.hidden {
     display: none;
 }

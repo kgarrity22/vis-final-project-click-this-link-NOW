@@ -165,13 +165,13 @@ export default function bars(container, data) {
                     .style("opacity", 0.9)
                     .style("color", "black")
                     .style("top", (e.screenY - 170 + "px"))
-
+                    .classed("hidden", false)
 
         })
         .on("mouseout", function (e, d) {
             d3.select('#bar-tooltip')
                 .html(``)
-                .attr("display", "none")
+                .classed("hidden", true)
             })
         .on("click", function (e, d) {
             console.log("checking if this click works: ", e, " ", d)
