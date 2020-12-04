@@ -343,20 +343,24 @@ body {
 }
 
 #bubble-tooltip {
-    opacity: 0;
+    /* opacity: 0; */
+    display: none;
     position: fixed;
     border: 1px solid black;
     border-radius: 15px;
     padding: 5px;
     
 }
-#bar-tooltip {
+.bar-tooltip {
     opacity: 0;
+    display: none;
     position: fixed;
     border: 1px solid black;
     border-radius: 15px;
     padding: 5px;
-    
+
+
+
 }
 
 .switch {
