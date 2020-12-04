@@ -238,6 +238,11 @@ export default function bubble(container, data) {
                 .duration(2000)
             d3.select("svg")
                 .remove()
+            d3.select("#toolbar")
+                .remove()
+            d3.select("#bubble-tooltip")
+                .classed("hidden", true)
+                
             const line_chart = lineChart(".line-chart", d)
 
         })

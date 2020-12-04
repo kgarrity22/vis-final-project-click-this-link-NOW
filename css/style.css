@@ -459,6 +459,6 @@ body{
 
 }
 
-#bar-tooltip.hidden {
+#bar-tooltip.hidden, #bubble-tooltip.hidden {
     display: none;
 }

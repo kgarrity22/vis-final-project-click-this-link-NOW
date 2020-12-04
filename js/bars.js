@@ -190,12 +190,20 @@ export default function bars(container, data) {
             })
         .on("click", function (e, d) {
             console.log("checking if this click works: ", d)
+
+            d3.select('#bar-tooltip')
+                .html(``)
+                .classed("hidden", true)
+
+                
             d3.select("svg")
                 .attr("class", "hidden")
                 .transition()
                 .duration(2000)
             d3.select("svg")
                 .remove()
+
+            
             
             //console.log("CLICKED AND NEW DATA IS: ", new_data)
             
