@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Why did we choose this?</title>
+
+<!-- Load CSS files -->
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800|Playfair+Display:700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/v4-shims.css">
+  <link rel="stylesheet" href="css/milligram.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+<!-- Load script files -->
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+<script src="js/jquery.scrollify.js"></script>
+<script type = "text/javascript" src="https://d3js.org/d3.v6.min.js"></script>
+
+<!-- Scripts for Maps-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcSiCJy8smv6Omp8TMXFINgjXxqDQqvus&callback=initMap&libraries=visualization&v=weekly"
+  defer></script>
+
+<script src="js/main.js" defer type="module"></script>
+
+</head>
+
+<script>
+  $(function () {
+    $(".page").css({
+      height: $(window).height()
+    });
+    $.scrollify({
+      section: "section",
+      scrollbars: true
+    });
+  });
+</script>
+
+<body>
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
+
+  <!-- MAIN STRUCTURAL PAGE-->
+  <section class="page-intro" data-section-name="introduction">
+    <div class="container" id="page-intro">
+      <h1>Why did we choose this?</h1>
+      <div class="text-block">
+        <p>We will be diving into the restaurant industry and seeing how it fared in Boston after 6+ months of lock-down.</p>
+        <p>The restaurant industry faces fierce competition in Boston as the condensed city allows great competition betweenn business. But who
+            fared the best? Let's take a look...
+        </p>
+        <p>(Use the arrows to navigate)</p>
+        
+          <div class="button-row">
+            <a href="#status-chart" class="scroll map"> <i class="fas fa-arrow-circle-down"></i></a> 
+            <a href="index.html" class="scroll map"> <i class="fas fa-home"></i></a>
+          </div>
+       
+        
+       
+      </div>
+    </div>
+
+    </div>
+    <b class="credits">
+      <a href="https://databank.worldbank.org/home" target="_blank">
+        <b>Powered by Yelp</b>
+      </a>
+      <br>
+      <b>Created by Kathleen, Dan, Kim, and Kieran</b>
+    </b>
+
+  </section>
+
+  <section class="status-map" data-section-name="status-section">
+    <div class="inner" id="status-chart">
+      <h2 class="header">Here is a chart of Restaurant Status</h2>
+      <div class="text-block">
+        <p>Click on a bubble to get more info about restaurants in a particular neighborhood!</p>
+      </div>
+      
+</body>
+
+</html>
