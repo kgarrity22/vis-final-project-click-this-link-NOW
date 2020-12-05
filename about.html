@@ -55,14 +55,13 @@
     <div class="container" id="page-intro">
       <h1>Why did we choose this?</h1>
       <div class="text-block">
-        <p>We will be diving into the restaurant industry and seeing how it fared in Boston after 6+ months of lock-down.</p>
-        <p>The restaurant industry faces fierce competition in Boston as the condensed city allows great competition betweenn business. But who
-            fared the best? Let's take a look...
+        <p>The problem we are attempting to demonstrate and offer some solutions to is evaluating restaurants in Boston based on
+          attributes such as review ratings, cuisine, price point, location, etc. We were interested in exploring whether the
+          trend of reviews correlates to COVID trends in Boston.
         </p>
-        <p>(Use the arrows to navigate)</p>
         
           <div class="button-row">
-            <a href="#status-chart" class="scroll map"> <i class="fas fa-arrow-circle-down"></i></a> 
+            <a href="#about-list" class="scroll map"> <i class="fas fa-arrow-circle-down"></i></a> 
             <a href="index.html" class="scroll map"> <i class="fas fa-home"></i></a>
           </div>
        
@@ -82,11 +81,39 @@
 
   </section>
 
-  <section class="status-map" data-section-name="status-section">
-    <div class="inner" id="status-chart">
-      <h2 class="header">Here is a chart of Restaurant Status</h2>
+  <section class="about-text" data-section-name="about-section">
+    <div class="inner" id="about-list">
+      <h2 class="header">Here is a bit more about our work</h2>
       <div class="text-block">
-        <p>Click on a bubble to get more info about restaurants in a particular neighborhood!</p>
+        <p>
+          This group has seen the fluctuation and struggle within the restaurant industry within these past 8 months. Restaurants faced severe pressure
+          during the beginning of the COVID crisis as they were forced to shut down without a glimmer of hope as to when they
+          would be able to reopen. Then, they were allowed to reopen only for takeout, thus for many businesses this created
+          another issue of shifting their business model to accommodate the new rules - partnering with more delivery apps that
+          charge insane fees, having to create new and safe ways for customers to pick up their orders, and attempting to keep
+          all their employees employed or at least offer some sort of compensation.
+          Understandinng how the COVID crisis affected restaurants’ ratings and whether or not customers were
+          more forgiving and understanding of shortcomings that restaurants may have had during these times. And with the new
+          9:30PM curfew that restaurants and bars in Boston must follow, the restaurant industry will once again need to be
+          innovative and quick-thinking.
+        </p>
+        <h3>How did we collect our Data?</h3>
+        <p>We used a dataset published by Harvard Dataverse. According to this published study, this dataset was created by
+          generating a list of Boston restaurants by searching up their zip codes on Yelp, and verifying that the restaurant’s
+          address falls within Boston’s boundaries. This data was processed and scraped by BARI. The study includes multiple
+          datasets (YELP.Reviews, YELP.Restaurants, and YELP.CT) which all contain different information about the restaurants.
+          We were able to find this study and download the separate datasets to form our own</p>
+          
+          <p>The dataset we found was scraped directly from these Yelp reviews, which ultimately fit exactly what we were intending
+            to represent. The dataset’s attributes gives us flexibility to evaluate the quality of the restaurants, type of food
+            served, price point, and overall reviews of the restaurants. The dataset also gives us the address for each
+            restaurant, which will give us more options to use this location data for a map visualization. </p>
+          
+          <p>Additionally, we need to convert the addresses of the restaurants given in the dataset to coordinates (latitude and
+            longitude) in order for them to function with the MapBox we have integregated. This was done using a mass Excel
+            formula which was able to quickly all addreses.</p>
+          <h3>Teamwork?</h3>
+          <p>In terms of splitting up work, we had each team member be in charge of one visualization -- while also helping each other with our respective visualizations.  We also have met multiple times per week in order to work on the project, share ideas and constructive criticism, and ensure we each portray the importance of our topics on through our visualizations.</p>
       </div>
       
 </body>
