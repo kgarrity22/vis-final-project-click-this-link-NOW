@@ -48,6 +48,10 @@ body {
     text-align: center;
     width: 100%;
   }
+
+  #container {
+    justify-content: center;
+  }
   #page-end,
   #page-intro {
     text-align: center;
