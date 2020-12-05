@@ -11,7 +11,8 @@
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800|Playfair+Display:700&display=swap"
     rel="stylesheet" />
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/v4-shims.css">
   <link rel="stylesheet" href="css/milligram.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 
@@ -52,13 +53,14 @@
   <!-- MAIN STRUCTURAL PAGE-->
   <section class="page-intro" data-section-name="introduction">
     <div class="container" id="page-intro">
-      <div class="hero-image"></div>
       <h1>Restaurants vs. COVID</h1>
       <div class="text-block">
         <p>We will be diving into the restaurant industry and seeing how it fared in Boston after 6+ months of lock-down.</p>
         <p>The restaurant industry faces fierce competition in Boston as the condensed city allows great competition betweenn business. But who
             fared the best? Let's take a look...
         </p>
+        <p>(Use the arrows to navigate)</p>
+        <a href="#status-chart" class="scroll map"> <i class="fas fa-arrow-circle-down"></i></a>
       </div>
     </div>
 
@@ -78,8 +80,8 @@
 
   </section>
 
-  <section class="covid-Map" data-section-name="covid-section">
-    <div class="inner" id="covid-map">
+  <section class="status-map" data-section-name="status-section">
+    <div class="inner" id="status-chart">
       <h2 class="header">Here is a chart of Restaurant Status</h2>
       <div class="text-block">
         <p>Click on a bubble to get more info about restaurants in a particular neighborhood!</p>
@@ -108,41 +110,38 @@
       </div>
         <div class="chart4"></div>
         
-      
-      
-
-
-
+        <a href="#heatmap" class="scroll map"> <i class="fas fa-arrow-circle-down"></i></a>
     </div>
-
     
-    </b>
   </section>
 
-  <section class="page-bar" data-section-name="heatmap">
-    <h2 align="center" class="header">Heatmap of Boston</h2>
-    <div class="text-block">
-      <p align="center">Heatmap that will demonstrate the rating distribution</p>
-    </div>
+  <section class="page-bar" data-section-name="heatmap-section">
+    <div class="inner" id="heatmap-chart">
+      <h2 class="header">Heatmap of Boston</h2>
+      <div class="text-block">
+        <p>Heatmap that will demonstrate the rating distribution</p>
+        </div>
     <div id='heatmap'></div>
+    <a href="#closedRestaurantMap" class="scroll map"> <i class="fas fa-arrow-circle-down"></i></a>
+    </div>
     
   </section>
 
-  <section class="page-bar" data-section-name="map-cusine">
-    <h2 align="center" class="header">How Cuisines Fared</h2>
-    <div class="text-block">
-    <p align="center">
-        Select different cuisines from the list below to see if the restaurants that closed
-        already recieved above or below average Yelp reviews. This may give some indication of whether
-        or not these businesses
-        were already struggling before they were impacted by Covid restrictions. The most recent cuisine
-        you select
-        will highlight all the closed restaurants on the map above that served that particular cuisine.
-        If the slope
-        graph begins to get too crowded, simply click "reset."
-    </p>
-    <div class="user-control">
-        <select id="cuisine-category" class="form-control">
+  <section class="page-bar" data-section-name="cuisine-section">
+      <h2 class="header">How Cuisines Fared</h2>
+      <div class="text-block">
+        <p>
+          Select different cuisines from the list below to see if the restaurants that closed
+          already recieved above or below average Yelp reviews. This may give some indication of whether
+          or not these businesses
+          were already struggling before they were impacted by Covid restrictions. The most recent cuisine
+          you select
+          will highlight all the closed restaurants on the map above that served that particular cuisine.
+          If the slope
+          graph begins to get too crowded, simply click "reset."
+        </p>
+        <div class="user-control">
+          <select id="cuisine-category" class="form-control">
             <option value="Select A Cuisine" selected>Select A Cuisine</option>
             <option value='Better Closed Restaurants'>Better Closed Restaurants</option>
             <option value='Worse Closed Restaurants'>Worse Closed Restaurants</option>
@@ -198,29 +197,29 @@
             <option value='Vietnamese'>Vietnamese</option>
             <option value='Whiskey Bars'>Whiskey Bars</option>
             <option value='Wine Bars'>Wine Bars</option>
-        </select>
-        
-    </div>
-    <button type="button" class="button button-outline"  id="slopeGraphReset">Reset</button>
-    </div>
-    <div id='closedRestaurantMap'></div>
-        <div id="closedRestaurantMapTooltip" class="hidden"></div>
-
-        <div class="container">
-            <div class="row">
-               
-
-                    <div class='slopeChart'>
-                        <!-- slope chart SVG here-->
-                    </div>
-
-                    <!-- <h1 id="thanks">Eat Locally!</h1> -->
-          
-            </div>
+          </select>
+  
         </div>
-
-       
-        <!-- </div> -->
+        <button type="button" class="button button-outline" id="slopeGraphReset">Reset</button>
+      </div>
+  
+      <div id='closedRestaurantMap'> </div>
+      <div id="closedRestaurantMapTooltip" class="hidden"></div>
+  
+      <div class="container">
+        <div class="row">
+  
+          <div class='slopeChart'>
+            <!-- slope chart SVG here-->
+          </div>
+  
+  
+        </div>
+      </div>
+      <div class="inner" id="cuisine-chart"> 
+      <a href="#page-intro" class="scroll map"> <i class="fas fa-home"></i></a>
+      </div>
+  
   </section>
 
   <!-- <h1 id="thanks">Eat Locally!</h1> -->

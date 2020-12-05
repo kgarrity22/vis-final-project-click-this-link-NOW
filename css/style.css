@@ -36,11 +36,18 @@ body {
     font-weight: 800;
   }
   
-  #covid-map {
+  #status-chart {
     text-align: center;
     width: 100%;
   }
-  
+  #heatmap-chart {
+    text-align: center;
+    width: 100%;
+  }
+  #cuisine-chart {
+    text-align: center;
+    width: 100%;
+  }
   #page-end,
   #page-intro {
     text-align: center;
