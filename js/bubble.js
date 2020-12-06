@@ -5,6 +5,8 @@ export default function bubble(container, data) {
 
     d3.selectAll(container)
         .attr("class", "visible")
+
+    
     
     
     var neighborhoods = [];
@@ -16,12 +18,8 @@ export default function bubble(container, data) {
     }
     
 
-    
-
-    
-
-    const margin = ({ top: 50, right: 50, bottom: 50, left: 50 })
-    const width = 1000 - margin.left - margin.right,
+    const margin = ({ top: 50, right: 40, bottom: 50, left: 20 })
+    const width = 1200 - margin.left - margin.right,
         height = 800 - margin.top - margin.bottom;
 
     
@@ -31,18 +29,42 @@ export default function bubble(container, data) {
         d.r = d.rating**1.5 + 1;
         d.x = width / 2;
         d.y = height / 2;
+        var cuisines = d.restaurant_tag.split(",")
+        //console.log("cuisines: ", cuisines);
+        d.cuisines = cuisines[0]
 
-        
+        if (d.review_number <= 100){
+            d.rev_bin = "0-100";
+        } else if (d.review_number <= 200){
+            d.rev_bin = "101-200"
+        } else if (d.review_number <= 300) {
+            d.rev_bin = "201-300"
+        } else if (d.review_number <= 400) {
+            d.rev_bin = "301-400"
+        } else if (d.review_number <= 500) {
+            d.rev_bin = "401-500"
+        } else {
+            d.rev_bin = "> 500"
+        }
+
+        if (d.price == "$ ") {
+            d.price_level = 1;
+        } else if (d.price == "$$ "){
+            d.price_level = 2
+        } else if (d.price == "$$$ ") {
+            d.price_level = 3
+        } else if (d.price == "$$$$ ") {
+            d.price_level = 4;
+        } else if (d.price == "NA") {
+            d.price_level = 0
+        }
+
     })
     
     
     
-
-    
     var centerScale = d3.scalePoint().padding(1).range([0, width]);
     var forceStrength = 0.1;
-
-    
 
     
     let svg = d3.selectAll(container).append("svg")
@@ -64,13 +86,10 @@ export default function bubble(container, data) {
         .force("x", d3.forceX().x(width / 2))
 
     
-
-    
     var circles = svg.selectAll("circle")
         .data(data, function (d) { return d; })
     
         
-
     var circlesEnter = circles.enter().append("circle")
         .attr("r", function (d, i) { return d.r })
         .attr("cx", function (d, i) { return 175 + 25 * i + 2 * i ** 2; })
@@ -79,19 +98,16 @@ export default function bubble(container, data) {
         .style("stroke", "black")
         .style("stroke-width", 2)
         .style("pointer-events", "all")
-        // .call(d3.drag()
-        //     .on("start", dragstarted)
-        //     .on("drag", dragged)
-        //     .on("end", dragended));
+        
 
     circles = circles.merge(circlesEnter)
 
     circles.on("mouseover", function (e, d) {
-        //console.log("d: ", d, " e : ", e)
+        
         d3.select('#bubble-tooltip')
             .attr("opacity", 1)
             .attr("display", "block")
-            .html(`Name: ${d.restaurant_name}<br>Rating: ${d.rating}<br>Number of Reviews: ${d.review_number}<br>Cuisin Type: ${d.restaurant_tag}`)
+            .html(`<strong>Name:</strong> ${d.restaurant_name}<br><strong>Rating:</strong> ${d.rating}<br><strong>Number of Reviews: </strong>${d.review_number}<br><strong>Cuisine Type: </strong>${d.cuisines}`)
             .style("left", (e.screenX - 100 + "px"))
             .style("font-family", "Gill Sans")
             .style("font-size", "12px")
@@ -111,8 +127,7 @@ export default function bubble(container, data) {
 
 
     function ticked() {
-        //console.log("tick")
-        //console.log(data.map(function(d){ return d.x; }));
+
         circles
             .attr("cx", function (d) { return d.x; })
             .attr("cy", function (d) { return d.y; });
@@ -122,36 +137,7 @@ export default function bubble(container, data) {
         .nodes(data)
         .on("tick", ticked);
 
-    // function dragstarted(d, i) {
-    //     //console.log("dragstarted " + i)
-    //     if (!d3.event.active) simulation.alpha(1).restart();
-    //     d.fx = d.x;
-    //     d.fy = d.y;
-    // }
-
-    // function dragged(d, i) {
-    //     //console.log("dragged " + i)
-    //     d.fx = d3.event.x;
-    //     d.fy = d3.event.y;
-    // }
-
-    // function dragended(d, i) {
-    //     //console.log("dragended " + i)
-    //     if (!d3.event.active) simulation.alphaTarget(0);
-    //     d.fx = null;
-    //     d.fy = null;
-    //     var me = d3.select(this)
-    //     console.log(me.classed("selected"))
-    //     me.classed("selected", !me.classed("selected"))
-
-    //     d3.selectAll("circle")
-    //         .style("fill", function (d, i) { return color(d.restaurant_neighborhood); })
-
-    //     d3.selectAll("circle.selected")
-    //         .style("fill", "none")
-
-    // }
-
+ 
     function groupBubbles() {
         hideTitles();
 
@@ -163,17 +149,48 @@ export default function bubble(container, data) {
     }
 
     function splitBubbles(byVar) {
+        
+        if (byVar == "price"){
+            data.sort(function(a, b){
+                return a.price_level - b.price_level
+            })
+            centerScale.domain((data.map(function (d) { return d[byVar]; })))
 
-        centerScale.domain(data.map(function (d) { return d[byVar]; }));
+        
+        } else if (byVar == "rev_bin") {
+            data.sort(function(a, b){
+                return a.rev_bin - b.rev_bin;
+            })
+            centerScale.domain((data.map(function (d) { return d[byVar]; })))
+            console.log("DOMAIN: ", centerScale.domain())
+            centerScale.domain(centerScale.domain().sort())
+
+        } else if (byVar == "rating"){
+            data.sort(function(a, b){
+                return a.rating - b.rating
+            })
+            centerScale.domain((data.map(function (d) { return d[byVar]; })))
+        } else {
+            centerScale.domain(data.map(function (d) { return d[byVar]; }));
+            
+            
+        }
+        // console.log("center scale: ", centerScale)
+        console.log("center domain : ", centerScale.domain().sort())
+
+        
 
         if (byVar == "all") {
             hideTitles()
         } else {
             showTitles(byVar, centerScale);
         }
+        
 
         // @v4 Reset the 'x' force to draw the bubbles to their year centers
         simulation.force('x', d3.forceX().strength(forceStrength).x(function (d) {
+            //console.log("X in force is: ", d)
+            //console.log("checking order: ", centerScale(d[byVar]))
             return centerScale(d[byVar]);
         }));
 
@@ -188,16 +205,37 @@ export default function bubble(container, data) {
     function showTitles(byVar, scale) {
         // Another way to do this would be to create
         // the year texts once and then just hide them.
+        //console.log("TITLES: ", scale.domain())
+
         var titles = svg.selectAll('.title')
             .data(scale.domain());
 
         titles.enter().append('text')
             .attr('class', 'title')
             .merge(titles)
-            .attr('x', function (d) { return scale(d); })
-            .attr('y', 40)
-            .attr('text-anchor', 'middle')
-            .text(function (d) { return byVar + ' ' + d; });
+            .attr('x', function (d, i) { return scale(d)*1.25 - 170})
+            .attr('y', 100)
+            .attr('text-anchor', 'start')
+            .text(function (d) { 
+                console.log("the text item: ", d)
+                if (typeof(d) == "string"){
+                    if (d.includes("00")) {
+                        return d + " Reviews";
+                    } else if (d.includes("$") || d.includes("NA")) {
+                        return "Price Category: " + d;
+                    } else if (d == "TRUE") {
+                        return "Closed Restaurants"
+                    } else if (d == "FALSE") {
+                        return "Open Restaurants";
+                    }
+                }
+                 else if (d<10){
+                    return "Rating: " + d;
+                } else {
+                    return d; 
+                }
+                
+            });
 
         titles.exit().remove()
     }

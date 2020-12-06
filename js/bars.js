@@ -87,7 +87,10 @@ export default function bars(container, data) {
     console.log("bars data: ", bars_data)
 
     
-    
+    bars_data.sort(function (a, b) {
+        //console.log("BARS SORT: ", a.rest_num, b.rest_num)
+        return b.rest_num - a.rest_num
+    })
 
     let svg = d3.select(container).append("svg")
         .attr("width", width + margin.left + margin.right)
@@ -101,7 +104,7 @@ export default function bars(container, data) {
         .range([0, width])
         .domain((bars_data.map(function(d){
             return d.neighborhood
-        })).sort())
+        })))
         .padding(0.2);
 
     svg.append("g")
@@ -121,7 +124,8 @@ export default function bars(container, data) {
 
         
         //console.log("RIGHT BEFORE BARS")
-
+    
+    console.log("bars data: ", bars_data)
     const circles = svg.selectAll('.bars')
         .data(bars_data)
 
@@ -133,7 +137,7 @@ export default function bars(container, data) {
 
     circles.enter()
         .append("circle")
-        .attr("cx", function (d,i) { return xAxis(d.neighborhood); } )
+        .attr("cx", function (d,i) { return xAxis(d.neighborhood)+14; } )
         .attr("cy", function (d,i) { return yAxis(d.rest_num); } )
         .attr("r", function (d,i) { 
             if (d.avg_rating >3.75){
@@ -154,8 +158,8 @@ export default function bars(container, data) {
         
             
         d3.selectAll("circle").on('mouseover', function(e, d){
-            console.log("e in mouseover: ", e)
-            console.log("D in mouseover: ", d)
+            //console.log("e in mouseover: ", e)
+            //console.log("D in mouseover: ", d)
             //console.log("this: ", this)
             //console.log("this: ", this.cx.animVal.value)
             // var tooltipx = this.cx.animVal.value;
@@ -163,6 +167,7 @@ export default function bars(container, data) {
 
             // d3.select(this)
             //     .attr("id", )
+            //console.log("POSITION: ", )
 
             d3.select('#bar-tooltip')
                     .style("opacity", 1)
@@ -181,8 +186,8 @@ export default function bars(container, data) {
 
         })
         .on("mouseout", function (e, d) {
-            console.log("e: ", e)
-            console.log("D is: ", d)
+            // console.log("e: ", e)
+            // console.log("D is: ", d)
             d3.select('#bar-tooltip')
                 .html(``)
                 .classed("hidden", true)
@@ -195,7 +200,7 @@ export default function bars(container, data) {
                 .html(``)
                 .classed("hidden", true)
 
-                
+
             d3.select("svg")
                 .attr("class", "hidden")
                 .transition()
@@ -219,7 +224,14 @@ export default function bars(container, data) {
             })
             console.log("checking on the data being passed into the bubble function: ", bubble_data)
             const neighborhoodChart = bubble("#bubble-chart", bubble_data);
-            
+            d3.select("#neighb-name")
+                .append("h2")
+                .text(bubble_data[0].restaurant_neighborhood + " Restaurants")
+            d3.select("#neighb-name")
+                .append("h5")
+                .text("Click on a button below to group the restaurants by different categories!")
+
+
     })
             
 
