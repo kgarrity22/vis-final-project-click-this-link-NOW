@@ -363,6 +363,10 @@ body {
     color: white;
 }
 
+#closedRestaurantCol h3 {
+  margin-left: 105px;
+}
+
 .slopeChart svg {
   display: block;
   margin: auto;
