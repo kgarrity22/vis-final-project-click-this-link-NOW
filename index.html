@@ -80,7 +80,7 @@
 
   <section class="status-map" data-section-name="status-section">
     <div class="inner" id="status-chart">
-      <h2 class="header">Here is a chart of Restaurant Status</h2>
+      <h2 class="header">Restaurants by Neighborhood</h2>
       <div class="text-block">
         <p>Let's take a look at the breakdown of restaurants in Boston neighborhoods. The larger the bubble the higher 
           the average rating for restaurants in each neighborhood. Click on a bubble to get more info about restaurants 
@@ -211,26 +211,31 @@
         <button type="button" class="button button-outline" id="slopeGraphReset">Reset</button>
       </div>
   
-      <div id='closedRestaurantMap'> </div>
-      <div id="closedRestaurantMapTooltip" class="hidden"></div>
-  
-      <div class="container">
-        <div class="row">
-  
-          <div class='slopeChart'>
-            <!-- slope chart SVG here-->
-          </div>
-  
-  
+      <div class = "row">
+        <div class="column">
+          <div id='closedRestaurantMap'> </div>
+          <div id="closedRestaurantMapTooltip" class="hidden"></div>    
         </div>
+        <div class="column">
+          <div class="container"> 
+              <div class='slopeChart'>
+                <h3>Slope Chart</h3>     
+
+                <!-- slope chart SVG here-->
+              </div>
+          </div>
+    
+        </div>
+
       </div>
+  
 
 
 
       <div class="inner" id="cuisine-chart"> 
         <a href="#page-intro" class="scroll map"> <i class="fas fa-home"></i></a>
 
-        </div>
+      </div>
 
   
   </section>
