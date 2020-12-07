@@ -221,14 +221,18 @@ body {
     max-width: 90%;
     line-height: 24px;
   }
+
+  .text-block button {
+    margin-bottom: 30px;
+  }
   
   .credits {
-    position: absolute;
+    /* position: absolute; */
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    bottom: 25px;
+    /* bottom: 25px; */
     text-align: center;
     text-transform: uppercase;
     font-size: 12px;
@@ -326,8 +330,8 @@ body {
     position: relative;
     z-index: 0;
     height: 500px;
-    width: 1100px;
-    margin-left: 155px;
+    width: 600px;
+    margin-left: 105px;
   
   }
 
@@ -359,6 +363,18 @@ body {
     color: white;
 }
 
+#closedRestaurantCol h3 {
+  margin-left: 105px;
+}
+
+.slopeChart svg {
+  display: block;
+  margin: auto;
+}
+
+.slopeChart h3 {
+  margin-bottom: 15px;
+}
 
 
 .switch {
@@ -478,4 +494,12 @@ body{
 
 #bar-tooltip.hidden, #bubble-tooltip.hidden {
     display: none;
+}
+
+#datalink{
+  color: #739ce9;
+}
+
+#datalink:hover{
+  color: grey;
 }

@@ -19,7 +19,7 @@
 <!-- Load script files -->
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
     crossorigin="anonymous"></script>
-<script src="js/jquery.scrollify.js"></script>
+<!-- <script src="js/jquery.scrollify.js"></script> -->
 <script type = "text/javascript" src="https://d3js.org/d3.v6.min.js"></script>
 
 <!-- Scripts for Maps-->
@@ -54,6 +54,8 @@
   <section class="page-intro" data-section-name="introduction">
     <div class="container" id="page-intro">
       <h1>Restaurants vs. COVID</h1>
+      <p class = "credits">Created by Kathleen, Dan, Kim, and Kieran</p>
+      <br>
       <div class="text-block">
         <p>We will be diving into the restaurant industry and seeing how it fared in Boston after 6+ months of lock-down.</p>
         <p>The restaurant industry faces fierce competition in Boston as the condensed city allows great competition between business. But who
@@ -65,26 +67,20 @@
             <a href="#status-chart" class="scroll map"> <i class="fas fa-arrow-circle-down"></i></a> 
             <a href="about.html" class="scroll map"> <i class="fas fa-info-circle"></i> </a>
           </div>
-       
-        
-       
+
+
       </div>
     </div>
 
     </div>
-    <b class="credits">
-      <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DMWCBT" target="_blank">
-        <b>Powered by Harvard Dataverse</b>
-      </a>
-      <br>
-      <b>Created by Kathleen, Dan, Kim, and Kieran</b>
-    </b>
 
   </section>
 
+  <section></section>
+
   <section class="status-map" data-section-name="status-section">
     <div class="inner" id="status-chart">
-      <h2 class="header">Here is a chart of Restaurant Status</h2>
+      <h2 class="header">Restaurants by Neighborhood</h2>
       <div class="text-block">
         <p>Let's take a look at the breakdown of restaurants in Boston neighborhoods. The larger the bubble the higher 
           the average rating for restaurants in each neighborhood. Click on a bubble to get more info about restaurants 
@@ -115,14 +111,14 @@
 
         
       </div>
-        <div class="chart4"></div>
+      <div class="chart4"></div>
         
         <a href="#heatmap" class="scroll map"> <i class="fas fa-arrow-circle-down"></i></a>
     </div>
     
   </section>
   
-  <section></section>
+  <!-- <section></section> -->
 
   <section class="page-bar" data-section-name="heatmap-section">
     <div class="inner" id="heatmap-chart">
@@ -143,14 +139,17 @@
       <h2 class="header">How Cuisines Fared</h2>
       <div class="text-block">
         <p>
-          Select different cuisines from the list below to see if the restaurants that closed
-          already recieved above or below average Yelp reviews. This may give some indication of whether
-          or not these businesses
-          were already struggling before they were impacted by Covid restrictions. The most recent cuisine
-          you select
-          will highlight all the closed restaurants on the map above that served that particular cuisine.
-          If the slope
-          graph begins to get too crowded, simply click "reset."
+          The map below shows the location of 69 restaurants in Boston that closed permanently as a result of Covid-19. 
+          Hover over any location to reveal a tooltip containing the restaurant's name, average Yelp rating, 
+          price, and a list of cuisines that were served. To help guide your exploration, you can select different cuisines 
+          from the list below to highlight the closed restaurants that served that particular cuisine. Each selected cuisine 
+          will be added to the slope graph, although the highlighted circles will always represent your most recent selection. 
+          If the slope graph begins to get too crowded, simply click "reset."
+          <br>
+          <br>
+          The slope graph seeks to address the question of whether the closed restaurants were already receiving above or below 
+          average Yelp reviews relative to restaurants that served the same cuisine. In this way, the chart provides an 
+          indication of whether or not these businesses were already struggling before they were impacted by Covid restrictions. 
         </p>
         <div class="user-control">
           <select id="cuisine-category" class="form-control">
@@ -215,22 +214,34 @@
         <button type="button" class="button button-outline" id="slopeGraphReset">Reset</button>
       </div>
   
-      <div id='closedRestaurantMap'> </div>
-      <div id="closedRestaurantMapTooltip" class="hidden"></div>
-  
-      <div class="container">
-        <div class="row">
-  
-          <div class='slopeChart'>
-            <!-- slope chart SVG here-->
+      <div class = "row">
+        <div class="column" id="closedRestaurantCol">
+          <h3>Closed Restaurants</h3>     
+          <div id='closedRestaurantMap'> 
           </div>
-  
-  
+          <div id="closedRestaurantMapTooltip" class="hidden"></div>    
         </div>
+        <div class="column">
+          <div class="container"> 
+              <div class='slopeChart'>
+                <h3>Slope Chart</h3>     
+
+                <!-- slope chart SVG here-->
+              </div>
+          </div>
+    
+        </div>
+
       </div>
+  
+
+
+
       <div class="inner" id="cuisine-chart"> 
-      <a href="#page-intro" class="scroll map"> <i class="fas fa-home"></i></a>
+        <a href="#page-intro" class="scroll map"> <i class="fas fa-home"></i></a>
+
       </div>
+
   
   </section>
 
@@ -248,7 +259,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@5.1.3"></script>
 
   <!-- Load JS libraries: Scrollify -->
-  <script src="js/jquery.scrollify.js"></script>
+  <!-- <script src="js/jquery.scrollify.js"></script> -->
 
 </body>
   

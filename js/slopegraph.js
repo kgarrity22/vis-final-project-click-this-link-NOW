@@ -76,12 +76,23 @@ export default function slopeGraph(container, data) {
 
     let svg = d3.select(container)
         .append("svg")
-        .attr("width", 1000)
+        .attr("width", 600)
         .attr("height", 600)
-        .attr("viewBox", [0, 0, width, height])
+        .attr("viewBox", [50, 0, 500, height])
         .attr("font-family", "sans-serif")
         .attr("font-size", 10);            
 
+
+    let keys = ["Average Cuisine Rating of All Restaurants", "Average Cuisine Rating of Closed Restaurants"];
+        
+    svg.append("g")
+    .attr("text-anchor", "middle")
+    .selectAll("g")
+    .data(keys)
+    .join("g")
+    .attr("transform", (d, i) => `translate(${x(i)},20)`)
+    .call(g => g.append("text").text(d => d))
+    .call(g => g.append("line").attr("y1", 3).attr("y2", 9).attr("stroke", "currentColor"));
 
 
     function renderSlopeGraph(data){
@@ -89,7 +100,6 @@ export default function slopeGraph(container, data) {
         console.log("GLOBAL FLAG", globalFlag);
 
         console.log(data);
-        let keys = ["Average Cuisine Rating of All Restaurants", "Average Cuisine Rating of Closed Restaurants"];
             
         const padding = 3
         
@@ -97,16 +107,6 @@ export default function slopeGraph(container, data) {
         let extent = d3.extent(data.flatMap(d => d.values));
 
         y.domain([2,5]);
-
-
-        svg.append("g")
-            .attr("text-anchor", "middle")
-            .selectAll("g")
-            .data(keys)
-            .join("g")
-            .attr("transform", (d, i) => `translate(${x(i)},20)`)
-            .call(g => g.append("text").text(d => d))
-            .call(g => g.append("line").attr("y1", 3).attr("y2", 9).attr("stroke", "currentColor"));
 
 
         let line = d3.line()
