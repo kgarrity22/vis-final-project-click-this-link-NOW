@@ -158,7 +158,7 @@ export default function bars(container, data) {
         
             
         d3.selectAll("circle").on('mouseover', function(e, d){
-            //console.log("e in mouseover: ", e)
+            console.log("e in mouseover: ", e)
             //console.log("D in mouseover: ", d)
             //console.log("this: ", this)
             //console.log("this: ", this.cx.animVal.value)
@@ -172,14 +172,14 @@ export default function bars(container, data) {
             d3.select('#bar-tooltip')
                     .style("opacity", 1)
                     .attr("display", "block")
-                    .html(`Neighborhood: ${d.neighborhood}<br>Number of Restuarants: ${d.rest_num}<br> Avg. Rating: ${d.avg_rating}`)
-                .style("top", (e.screenY - 150 + "px"))
+                    .html(`Neighborhood: <strong>${d.neighborhood}</strong><br>Number of Restuarants: <strong>${d.rest_num}</strong><br> Avg. Rating: <strong>${d.avg_rating}</strong>`)
                     .style("font-family", "Gill Sans")
                     .style("font-size", "12px")
                     .style("background-color", "white")
-                    .style("opacity", 0.9)
+                    .style("opacity", 1)
                     .style("color", "black")
-                .style("left", (e.screenX -100 + "px"))
+                    .style("top", ((e.y + 5) + "px"))
+                    .style("left", ((e.x + 10) + "px"))
                     .classed("hidden", false)
                 
                 
