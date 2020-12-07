@@ -223,12 +223,12 @@ body {
   }
   
   .credits {
-    position: absolute;
+    /* position: absolute; */
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    bottom: 25px;
+    /* bottom: 25px; */
     text-align: center;
     text-transform: uppercase;
     font-size: 12px;
@@ -478,4 +478,12 @@ body{
 
 #bar-tooltip.hidden, #bubble-tooltip.hidden {
     display: none;
+}
+
+#datalink{
+  color: #739ce9;
+}
+
+#datalink:hover{
+  color: grey;
 }
