@@ -78,7 +78,7 @@ export default function slopeGraph(container, data) {
         .append("svg")
         .attr("width", 600)
         .attr("height", 600)
-        .attr("viewBox", [0, 0, width, height])
+        .attr("viewBox", [50, 0, 500, height])
         .attr("font-family", "sans-serif")
         .attr("font-size", 10);            
 
