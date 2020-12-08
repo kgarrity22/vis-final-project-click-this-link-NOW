@@ -447,6 +447,7 @@ input:checked + .slider:before {
 .visible {
   
   visibility: visible;
+  
   opacity: 1;
   transition: opacity 4s linear;
 }
@@ -454,17 +455,20 @@ input:checked + .slider:before {
 .hidden {
   visibility: hidden;
   opacity: 0;
+  max-height: 0;
   transition: visibility 0s 2s, opacity 2s linear;
 }
 .hidden2 {
   visibility: hidden;
   opacity: 0;
+  max-height: 0;
   transition: visibility 0s 1s, opacity 1s linear;
 }
 
 .hidden3 {
   visibility: hidden;
   opacity: 0;
+  max-height: 0;
   transition: visibility 0s 0s, opacity 0s linear;
 }
 

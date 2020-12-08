@@ -209,6 +209,8 @@ export default function lineChart(container, restuarant, bubble_data, chart_data
         //     .remove()
         // d3.select("#bubble-tooltip")
         //     .classed("hidden", true)
+        d3.select("#button-holder")
+            .classed("hidden3", true)
 
         d3.select("#line-name")
             .classed("hidden3", true)
@@ -224,7 +226,7 @@ export default function lineChart(container, restuarant, bubble_data, chart_data
         d3.select("#toolbar")
             .classed("hidden3", false)
 
-        const neighborhoodChart = bubble("#bubble-chart", bubble_data, chart_data)
+        const neighborhoodChart = bubble("#barchart1", bubble_data, chart_data)
     })
 
 

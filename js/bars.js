@@ -208,6 +208,12 @@ export default function bars(container, data) {
 
             d3.select("#returntobubbles")
                 .classed("hidden3", true)
+            
+            d3.select("#toolbar")
+                .classed("hidden3", false)
+
+            d3.select("#neighb-name")
+                .classed("hidden3", false)
 
 
             d3.selectAll("svg")
@@ -232,7 +238,7 @@ export default function bars(container, data) {
                 }
             })
             console.log("checking on the data being passed into the bubble function: ", bubble_data)
-            const neighborhoodChart = bubble("#bubble-chart", bubble_data, new_data);
+            const neighborhoodChart = bubble("#barchart1", bubble_data, new_data);
             d3.select("#chart-tip")
                 .classed("hidden3", true)
             
