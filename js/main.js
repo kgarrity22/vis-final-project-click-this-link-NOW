@@ -59,7 +59,7 @@ d3.csv('data/yelp.csv', d => {
     const covidChart = CovidMap(".chart4", data);
 
     // const bars_chart = bars(".chart1", data);
-    const bars_chart = bars(".chart1", data);
+    const bars_chart = bars("#barchart1", data);
     d3.select(".chart1")
         .style("opacity", 0)
 
@@ -81,7 +81,7 @@ d3.csv('data/yelp.csv', d => {
 
 
 
-        var colors = ['orange', 'purple', 'steelblue', 'pink', 'black']
+        
         var gs = d3.graphScroll()
             .container(d3.select('.container-1'))
             .graph(d3.selectAll('container-1 #graph'))
@@ -91,6 +91,9 @@ d3.csv('data/yelp.csv', d => {
                 console.log("Seeing what I IS: ", i)
                 var circles = d3.selectAll(".points")
                 var all_circles = circles._groups[0]
+
+                d3.selectAll(".points")
+                    .style("fill", "pink")
 
                 // SELECTING BOSTON REstuarants
                 if (i == 1) {
@@ -133,7 +136,7 @@ d3.csv('data/yelp.csv', d => {
                     }
 
                 }
-                else if (i == 4) {
+                else if (i > 3) {
                     d3.select("#graph")
                         .attr("class", "hidden2")
                     
@@ -142,7 +145,7 @@ d3.csv('data/yelp.csv', d => {
                         .style("opacity", 1)
 
                     d3.selectAll(".points")
-                        .transition().duration(40)
+                        
                         .style("fill", "pink")
                     
                     d3.select(".chart1")
@@ -152,6 +155,8 @@ d3.csv('data/yelp.csv', d => {
                         
 
                 }
+                d3.selectAll(".points")
+                    .style("fill", "pink")
 
             })
             

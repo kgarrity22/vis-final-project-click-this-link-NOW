@@ -234,7 +234,7 @@ export default function bars(container, data) {
             console.log("checking on the data being passed into the bubble function: ", bubble_data)
             const neighborhoodChart = bubble("#bubble-chart", bubble_data, new_data);
             d3.select("#chart-tip")
-                .remove()
+                .classed("hidden3", true)
             
             d3.select("#neighb-name h2")
                 .remove()

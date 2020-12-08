@@ -269,7 +269,19 @@ export default function bubble(container, data, chart_data) {
         .on("click", function(d){
             d3.selectAll("svg")
                 .remove()
-            bars(".chart1", chart_data)
+            
+            bars("#barchart1", chart_data)
+
+            d3.select("#toolbar")
+                .classed("hidden3", true)
+            d3.select("#bubble-tooltip")
+                .classed("hidden", true)
+
+            d3.select("#neighb-name")
+                .classed("hidden3", true)
+
+            d3.select("#chart-tip")
+                .classed("hidden3", false)
         })
 
     d3.selectAll("circle")
