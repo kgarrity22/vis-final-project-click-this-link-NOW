@@ -245,7 +245,7 @@ d3.csv('data/yelp.csv', d => {
 
     const ratingChart = barchart(".chart2", data);
 
-    const covidChart = CovidMap(".chart4", data);
+   // const covidChart = CovidMap(".chart4", data);
     
 
 }); // end of csv parsing
