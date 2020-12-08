@@ -1,6 +1,6 @@
 import lineChart from './line.js';
 
-export default function bubble(container, data) {
+export default function bubble(container, data, chart_data) {
     console.log("data entered into bubble: ", data)
 
     d3.selectAll(container)
@@ -270,20 +270,43 @@ export default function bubble(container, data) {
             // console.log("data is: ", d)
             
 
-            d3.select("svg")
+            d3.selectAll("svg")
                 .attr("class", "hidden")
                 .transition()
                 .duration(2000)
-            d3.select("svg")
+            d3.selectAll("svg")
                 .remove()
             d3.select("#toolbar")
                 .remove()
             d3.select("#bubble-tooltip")
                 .classed("hidden", true)
                 
-            const line_chart = lineChart(".line-chart", d)
+            const line_chart = lineChart(".line-chart", d, data, chart_data)
 
+            d3.select("#neighb-name")
+                .remove()
+
+            d3.select("#line-name")
+                .append("h2")
+                .text(d.restaurant_name + " Reviews")
+            d3.select("#line-name")
+                .append("h5")
+                .attr("class", "text-block")
+                .text("The dark line shows the number of reviews from January to August in 2019. The red line shows the number of reviews from January to August 2020. The red line shows that there were fewer reviews in 2020 as a result of the pandemic. Many reviews hit rock bottom in March when stay at home orders were the most strict.")
+            
+            var back_bubble_button =  d3.select("#button-holder")
+                .append("button")
+                .attr("id", "returntobubbles")
+                .attr("class", "button active button-outline")
+                .text("Go Back")
+            
+            
+
+
+                
         })
+
+    
 
 
 

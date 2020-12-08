@@ -58,7 +58,109 @@ d3.csv('data/yelp.csv', d => {
 
     const covidChart = CovidMap(".chart4", data);
 
+    // const bars_chart = bars(".chart1", data);
     const bars_chart = bars(".chart1", data);
+    d3.select(".chart1")
+        .style("opacity", 0)
+
+    const bars_chart_scroll = bars("#graph", data);
+
+    var oldWidth = 0
+    function render() {
+        // if (oldWidth == innerWidth) return
+        // oldWidth = innerWidth
+
+        // var width = height = d3.select('#graph').node().offsetWidth
+        // var r = 40
+
+
+        // if (innerWidth <= 925) {
+        //     width = innerWidth
+        //     height = innerHeight * .7
+        // }
+
+
+
+        var colors = ['orange', 'purple', 'steelblue', 'pink', 'black']
+        var gs = d3.graphScroll()
+            .container(d3.select('.container-1'))
+            .graph(d3.selectAll('container-1 #graph'))
+            .eventId('uniqueId1')  // namespace for scroll and resize events
+            .sections(d3.selectAll('.container-1 #sections > div'))
+            .on('active', function (i) {
+                console.log("Seeing what I IS: ", i)
+                var circles = d3.selectAll(".points")
+                var all_circles = circles._groups[0]
+
+                // SELECTING BOSTON REstuarants
+                if (i == 1) {
+                    for (var j of circles) {
+                        if (j.__data__.neighborhood == "Boston") {
+                            d3.select(j)
+                                .transition().duration(500)
+                                .style("fill", "navy")
+                        } else {
+                            d3.select(j)
+                                .style("fill", "pink")
+                                .attr("opacity", 0.3)
+                        }
+                    }
+
+                } else if (i == 2) {
+                    for (var j of circles) {
+                        if (j.__data__.neighborhood == "Cambridge" || j.__data__.neighborhood == "Brookline") {
+                            d3.select(j)
+                                .transition().duration(500)
+                                .style("fill", "navy")
+                        } else {
+                            d3.select(j)
+                                .style("fill", "pink")
+                                .attr("opacity", 0.3)
+                        }
+                    }
+                }
+                else if (i == 3) {
+                    for (var j of circles) {
+                        if (j.__data__.neighborhood == "North End") {
+                            d3.select(j)
+                                .transition().duration(500)
+                                .style("fill", "navy")
+                        } else {
+                            d3.select(j)
+                                .style("fill", "pink")
+                                .attr("opacity", 0.3)
+                        }
+                    }
+
+                }
+                else if (i == 4) {
+                    d3.select("#graph")
+                        .attr("class", "hidden2")
+                    
+                    d3.select(".visible")
+                        .transition().duration(900)
+                        .style("opacity", 1)
+
+                    d3.selectAll(".points")
+                        .transition().duration(40)
+                        .style("fill", "pink")
+                    
+                    d3.select(".chart1")
+                        .transition().duration(2500)
+                        .style("opacity", 1)
+                    
+                        
+
+                }
+
+            })
+            
+
+        // d3.select('#source')
+        //     .style({ 'margin-bottom': window.innerHeight - 450 + 'px', padding: '100px' })
+    }
+    render()
+    d3.select(window).on('resize', render)
 
     // const lineChart = line(".line-chart", data);
 

@@ -445,15 +445,21 @@ input:checked + .slider:before {
 }
 
 .visible {
+  
   visibility: visible;
   opacity: 1;
-  transition: opacity 2s linear;
+  transition: opacity 4s linear;
 }
 
 .hidden {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 2s, opacity 2s linear;
+}
+.hidden2 {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
 }
 
 circle.default {
@@ -502,4 +508,60 @@ body{
 
 #datalink:hover{
   color: grey;
+}
+
+#container{
+  position: relative;
+  width: 70%
+}
+
+#sections{
+  width: 450px;
+  
+}
+
+#sections > div{
+  background: white;
+  opacity: .2;
+  margin-bottom: 200px;
+}
+#sections > div:last-child{
+  margin-bottom: 30px;
+}
+#sections > div.graph-scroll-active{
+  opacity: 1;
+}
+
+#graph{
+  margin-left: 40px;
+  width: 500px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  float: right;
+}
+
+@media (max-width: 925px)  {
+  #graph{
+    width: 40%;
+    margin-left: 0px;
+    float: left;
+  }
+
+  #sections{
+    width: auto;
+    position: relative;
+    float: left;
+    margin: 100px auto;
+  }
+
+  #sections > div{
+    background: rgba(255,255,255,.5);
+    padding: 10px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    margin-bottom: 80vh;
+  }
+
+  
 }

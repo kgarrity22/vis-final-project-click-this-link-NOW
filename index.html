@@ -22,6 +22,9 @@
 <!-- <script src="js/jquery.scrollify.js"></script> -->
 <script type = "text/javascript" src="https://d3js.org/d3.v6.min.js"></script>
 
+<script src="js/graph-scroll.js"></script>
+
+
 <!-- Scripts for Maps-->
 <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
@@ -46,9 +49,20 @@
 </script> -->
 
 <body>
+  <!--- TEST SECTIONS FOR SCROLLING!!!!!!!!!!-->
+
+  <!--- this is where a right justified graph is-->
+  
+
+
+
+
+
   <div class="progress-container">
     <div class="progress-bar" id="myBar"></div>
   </div>
+
+  
 
   <!-- MAIN STRUCTURAL PAGE-->
   <section class="page-intro" data-section-name="introduction">
@@ -71,22 +85,76 @@
 
       </div>
     </div>
-
     </div>
-
   </section>
 
-  <section></section>
+  
+  
+  <!--- these are the text blocks that will scroll-->
+  <div id="container" class="container-1">
+    <div id="graph"></div>
+    <div id="sections">
+      <div>
+        <h2 class="header">Restaurants by Neighborhood</h2>
+        <div class="text-block">
+          <p>Let's take a look at the breakdown of restaurants in Boston neighborhoods. The chart on the left shows the neighborhoods in Boston
+            by neighborhood. The y-location of the bubble tells you how many restuarants a neighborhood has and the size of the bubble tells you the average rating 
+            of all the restaurants in that neighborhood. Scroll to see some of the graph's highlights!
+          </p>
+        </div>
+      </div>
+      <br><br><br><br>
+    
+      <div>
+        
+        <div class="text-block">
+          <p> We notice that the highest dot is for the the neighborhood of downtown Boston. This is where most of the restuarants
+            in the city are loctaed. However, the average rating of these restuarants is only about 3.5
+          </p>
+        </div>
+      </div>
+      <br><br><br><br>
+    
+      <div>
+        <div class="text-block">
+          <p> A few other bubbles that stand out are Brookline and Cambridge. The large bubbles show that the restaurants in these 
+            neighborhoods have high ratings. However, these neighborhoods also have very few restaurants.
+          </p>
+        </div>
+      </div>
+      <br><br><br><br>
+
+      <div>
+        <div class="text-block">
+          <p> The North End is a neighborhood that hits the sweet spot. As shown by it's y-position, the North End has a middling number of restaurants.
+            More significantly however, these restuarants have a very high average rating, suggesting that this would be a great neighborhood to grab a bite to eat.
+          </p>
+        </div>
+      </div>
+      <br><br><br><br>
+      <br><br><br><br>
+
+      <div>
+        <div class="text-block">
+        </div>
+      </div>
+      <br><br><br><br>
+      <br><br><br><br>
+    
+    </div> <!--this is the end of sections-->
+  </div> <!--this is the end of container-->
+
+  <!--- TEST SECTIONS FOR SCROLLING!!!!!!!!!!-->
 
   <section class="status-map" data-section-name="status-section">
     <div class="inner" id="status-chart">
-      <h2 class="header">Restaurants by Neighborhood</h2>
-      <div class="text-block">
-        <p>Let's take a look at the breakdown of restaurants in Boston neighborhoods. The larger the bubble the higher 
-          the average rating for restaurants in each neighborhood. Click on a bubble to get more info about restaurants 
-          in a particular neighborhood! Continue selecting filters to see the breakdown of these individual restuarants, 
-        and select individual bubbles to see a breakdown of reviews over time!</p>
+
+      <div class="visible" style="opacity:0">
+          <div class=" text-block">
+          <p id="chart-tip">Now try clicking on a dot to see more about the restaurants in a particular neighborhood!</p>
+          </div>
       </div>
+      
       <div class="chart1">
         <div id="barchart1">
             <div id="bar-tooltip"></div>
@@ -95,7 +163,10 @@
 
         <div id="bubble-chart" class="hidden">
           <div id="neighb-name"></div>
+          
             <div id="toolbar">
+              <button type="button" id="return-to-chart" class="button active button-outline">Go Back</button>
+              <br>
               <button type="button" id="all" class="button active button-outline">All</button>
               <button type="button" id="price" class="button button-outline">By Price</button>
               <button type="button" id="closed" class="button button-outline">By Open/Closed Status</button>
@@ -107,7 +178,10 @@
           <div id="bubble-tooltip"></div>
         </div>
 
-        <div class="line-chart" class="hidden"></div>
+        <div class="line-chart" class="hidden">
+          <div id="button-holder"></div>
+          <div id="line-name"></div>
+        </div>
 
         
       </div>
@@ -262,6 +336,103 @@
   <!-- <script src="js/jquery.scrollify.js"></script> -->
 
 </body>
+
+<script>
+
+  // var oldWidth = 0
+  // function render() {
+  //   if (oldWidth == innerWidth) return
+  //   oldWidth = innerWidth
+
+  //   var width = height = d3.select('#graph').node().offsetWidth
+  //   var r = 40
+
+
+  //   if (innerWidth <= 925) {
+  //     width = innerWidth
+  //     height = innerHeight * .7
+  //   }
+
+    
+
+  //   var colors = ['orange', 'purple', 'steelblue', 'pink', 'black']
+  //   var gs = d3.graphScroll()
+  //     .container(d3.select('.container-1'))
+  //     .graph(d3.selectAll('container-1 #graph'))
+  //     .eventId('uniqueId1')  // namespace for scroll and resize events
+  //     .sections(d3.selectAll('.container-1 #sections > div'))
+  //     .on('active', function (i) {
+  //       console.log("Seeing what I IS: ", i)
+  //       var circles = d3.selectAll(".points")
+  //       var all_circles = circles._groups[0]
+        
+  //       // SELECTING BOSTON REstuarants
+  //       if (i == 1){
+  //         for (var j of circles){
+  //           if (j.__data__.neighborhood == "Boston"){
+  //             d3.select(j)
+  //             .transition().duration(500)
+  //             .style("fill", "navy")
+  //           } else {
+  //             d3.select(j)
+  //               .style("fill", "pink")
+  //               .attr("opacity", 0.3)
+  //           }
+  //         }
+          
+  //       } else if (i == 2 ) {
+  //         for (var j of circles) {
+  //           if (j.__data__.neighborhood == "Cambridge" || j.__data__.neighborhood == "Brookline") {
+  //             d3.select(j)
+  //               .transition().duration(500)
+  //               .style("fill", "navy")
+  //           } else {
+  //             d3.select(j)
+  //               .style("fill", "pink")
+  //               .attr("opacity", 0.3)
+  //           }
+  //         }
+  //       }
+  //       else if (i == 3) {
+  //         for (var j of circles) {
+  //           if (j.__data__.neighborhood == "North End") {
+  //             d3.select(j)
+  //               .transition().duration(500)
+  //               .style("fill", "navy")
+  //           } else {
+  //             d3.select(j)
+  //               .style("fill", "pink")
+  //               .attr("opacity", 0.3)
+  //           }
+  //         }
+
+  //       }
+  //       else if (i == 4) {
+  //         d3.select("#graph")
+  //           .attr("class", "hidden")
+          
+  //           const bars_chart = bars(".chart1", data);
+
+  //       }
+
+
+        
+
+
+
+  //     })
+
+
+    
+
+  //   d3.select('#source')
+  //     .style({ 'margin-bottom': window.innerHeight - 450 + 'px', padding: '100px' })
+  // }
+  // render()
+  // d3.select(window).on('resize', render)
+
+
+</script>
   
 
 

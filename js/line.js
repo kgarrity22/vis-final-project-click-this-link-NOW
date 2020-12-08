@@ -1,4 +1,6 @@
-export default function lineChart(container, restuarant){
+import bubble from './bubble.js';
+
+export default function lineChart(container, restuarant, bubble_data, chart_data){
     console.log("IS THE LINE CHART WORKING")
     console.log("REStauratns: ", restuarant)
 
@@ -220,6 +222,13 @@ export default function lineChart(container, restuarant){
         //     .delay((d, i) => line(data.slice(0, i + 1)).length / (l) * (6000 - 125))
         //     .attr("opacity", 1);
 
+    console.log("CHECK CHECK: ", d3.selectAll("#returntobubbles"))
+        d3.selectAll("#returntobubbles")
+
+            .on("click", function(d){
+                console.log("clicked!!", d)
+                const neighborhoodChart = bubble("#bubble-chart", bubble_data, chart_data);
+            })
 
 
     

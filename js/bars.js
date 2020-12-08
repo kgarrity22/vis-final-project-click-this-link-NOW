@@ -55,8 +55,8 @@ export default function bars(container, data) {
     })
 
     // SVG CONVENTIONS
-    const margin = ({ top: 50, right: 50, bottom: 80, left: 50 })
-    const width = 1000 - margin.left - margin.right,
+    const margin = ({ top: 20, right: 50, bottom: 80, left: 50 })
+    const width = 800 - margin.left - margin.right,
         height = 600 - margin.top - margin.bottom;
 
     var neighborhood_nums = {}
@@ -154,6 +154,7 @@ export default function bars(container, data) {
         .style("fill", "pink")
         .style("opacity", "0.7")
         .attr("stroke", "black")
+        .attr("class", "points")
         
         
             
@@ -201,13 +202,13 @@ export default function bars(container, data) {
                 .classed("hidden", true)
 
 
-            d3.select("svg")
+            d3.selectAll("svg")
                 .attr("class", "hidden")
                 .transition()
                 .duration(2000)
-            d3.select("svg")
+            d3.selectAll("svg")
                 .remove()
-
+            
             
             
             //console.log("CLICKED AND NEW DATA IS: ", new_data)
@@ -223,13 +224,17 @@ export default function bars(container, data) {
                 }
             })
             console.log("checking on the data being passed into the bubble function: ", bubble_data)
-            const neighborhoodChart = bubble("#bubble-chart", bubble_data);
+            const neighborhoodChart = bubble("#bubble-chart", bubble_data, new_data);
+            d3.select("#chart-tip")
+                .remove()
             d3.select("#neighb-name")
                 .append("h2")
                 .text(bubble_data[0].restaurant_neighborhood + " Restaurants")
             d3.select("#neighb-name")
                 .append("h5")
                 .text("Click on a button below to group the restaurants by different categories!")
+                .append("h5")
+                .text("You may also select a bubble to see the reviews for that restaurant over time.")
 
 
     })
@@ -250,6 +255,8 @@ export default function bars(container, data) {
             .attr("x", 125)
             .attr("dy", ".75em")
             .text("Number of Restaurants");
+
+        
 
     
 
