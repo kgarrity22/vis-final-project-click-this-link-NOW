@@ -462,6 +462,12 @@ input:checked + .slider:before {
   transition: visibility 0s 1s, opacity 1s linear;
 }
 
+.hidden3 {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0s, opacity 0s linear;
+}
+
 circle.default {
   fill: #ff0000;
 }

@@ -77,25 +77,12 @@ export default function lineChart(container, restuarant, bubble_data, chart_data
             .attr("class", "axis x-axis")
             .attr("transform", `translate(0, ${height})`)
             .call(xAxis)
-        //     .call(function (g) {
-        //         g.select(".domain").remove();
-        //     })
-        //     .selectAll(".tick line")
-        //     .clone()
-        //     .attr("y2", -height)
-        //     .attr("stroke-opacity", 0.1)
+        
 
         svg.append("g")
             .attr("class", "axis y-axis")
             .call(yAxis)
-        //     .call(function (g) {
-        //         g.select(".domain").remove();
-        //     })
-        //     .selectAll(".tick line")
-        //     .clone()
-        //     .attr("x2", width)
-        //     .attr("stroke-opacity", 0.1)
-
+        
         svg.append("text")
             .attr("class", "y-label")
             .attr('x', 10)
@@ -200,35 +187,46 @@ export default function lineChart(container, restuarant, bubble_data, chart_data
         .attr("stroke", "black")
         .attr("stroke-width", 2);
 
-        // const label = svg.append("g")
-        //     .attr("font-family", "sans-serif")
-        //     .attr("font-size", 10)
-        //     .selectAll("g")
-        //     .data(data)
-        //     .join("g")
-        //     .attr("transform", d => `translate(${xScale(d.miles)},${yScale(d.gas)})`)
-        //     .attr("opacity", 0);
+        
 
+    
 
-        // label.append("text")
-        //     .text(function (d) {
-        //         return d.year;
-        //     })
-        //     .each(position)
-        //     .call(halo)
-        //     .attr("opacity",);
+    var back_bubble_button = d3.select("#button-holder")
+        .append("button")
+        .attr("id", "returntobubbles")
+        .attr("class", "button active button-outline")
+        .text("Go Back")
 
-        // label.transition()
-        //     .delay((d, i) => line(data.slice(0, i + 1)).length / (l) * (6000 - 125))
-        //     .attr("opacity", 1);
+   
+    back_bubble_button.on("click", function (d) {
+        console.log("CLICK REGISTERED!")
+        d3.selectAll("svg")
+            .attr("class", "hidden3")
+            .transition()
+            .duration(2000)
+        d3.selectAll("svg")
+            .remove()
+        // d3.select("#toolbar")
+        //     .remove()
+        // d3.select("#bubble-tooltip")
+        //     .classed("hidden", true)
 
-    console.log("CHECK CHECK: ", d3.selectAll("#returntobubbles"))
-        d3.selectAll("#returntobubbles")
+        d3.select("#line-name")
+            .classed("hidden3", true)
+        
+        d3.select("#chart-tip")
+            .classed("hidden3", true)
 
-            .on("click", function(d){
-                console.log("clicked!!", d)
-                const neighborhoodChart = bubble("#bubble-chart", bubble_data, chart_data);
-            })
+        d3.select("#neighb-name")
+            .classed("hidden3", false)
+        d3.select("#neighb-name")
+            .classed("hidden3", false)
+
+        d3.select("#toolbar")
+            .classed("hidden3", false)
+
+        const neighborhoodChart = bubble("#bubble-chart", bubble_data, chart_data)
+    })
 
 
     

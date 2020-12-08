@@ -173,7 +173,7 @@ export default function bars(container, data) {
             d3.select('#bar-tooltip')
                     .style("opacity", 1)
                     .attr("display", "block")
-                    .html(`Neighborhood: <strong>${d.neighborhood}</strong><br>Number of Restuarants: <strong>${d.rest_num}</strong><br> Avg. Rating: <strong>${d.avg_rating}</strong>`)
+                .html(`Neighborhood: <strong>${d.neighborhood}</strong><br>Number of Restuarants: <strong>${d.rest_num}</strong><br> Avg. Rating: <strong>${Math.round(d.avg_rating * 100) / 100}</strong>`)
                     .style("font-family", "Gill Sans")
                     .style("font-size", "12px")
                     .style("background-color", "white")

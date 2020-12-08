@@ -277,14 +277,14 @@ export default function bubble(container, data, chart_data) {
             d3.selectAll("svg")
                 .remove()
             d3.select("#toolbar")
-                .remove()
+                .classed("hidden3", true)
             d3.select("#bubble-tooltip")
                 .classed("hidden", true)
                 
             const line_chart = lineChart(".line-chart", d, data, chart_data)
 
             d3.select("#neighb-name")
-                .remove()
+                .classed("hidden3", true)
 
             d3.select("#line-name")
                 .append("h2")
@@ -294,11 +294,16 @@ export default function bubble(container, data, chart_data) {
                 .attr("class", "text-block")
                 .text("The dark line shows the number of reviews from January to August in 2019. The red line shows the number of reviews from January to August 2020. The red line shows that there were fewer reviews in 2020 as a result of the pandemic. Many reviews hit rock bottom in March when stay at home orders were the most strict.")
             
-            var back_bubble_button =  d3.select("#button-holder")
-                .append("button")
-                .attr("id", "returntobubbles")
-                .attr("class", "button active button-outline")
-                .text("Go Back")
+            // var back_bubble_button =  d3.select("#button-holder")
+            //     .append("button")
+            //     .attr("id", "returntobubbles")
+            //     .attr("class", "button active button-outline")
+            //     .text("Go Back")
+
+            // console.log("back button: ", back_bubble_button._groups[0])
+            // back_bubble_button.on("click", function(d){
+            //     console.log("CLICK REGISTERED!")
+            // })
             
             
 
