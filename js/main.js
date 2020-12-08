@@ -10,17 +10,7 @@ import heatMap from './heatmap.js';
 //create heatmap, need to add button functionality to swap with other map
 heatMap("heatmap");
 
-d3.json('data/closedRestaurants.json', d3.autoType).then(data=>{ 
 
-    const closedRestaurantsChart = closedRestaurant("closedRestaurantMap", data);
-
-}); 
-
-d3.json('data/slopegraphData.json', d3.autoType).then(data=>{ 
-
-    const slopeGraphChart = slopeGraph(".slopeChart", data);
-
-}); 
 
 
 d3.csv('data/yelp.csv', d => {
@@ -54,9 +44,7 @@ d3.csv('data/yelp.csv', d => {
         }
     }
 
-    const ratingChart = barchart(".chart2", data);
-
-    const covidChart = CovidMap(".chart4", data);
+    
 
     // const bars_chart = bars(".chart1", data);
     const bars_chart = bars("#barchart1", data);
@@ -254,7 +242,23 @@ d3.csv('data/yelp.csv', d => {
             var scrolled = (winScroll / height) * 100;
             document.getElementById("myBar").style.height = scrolled + "%";
           }
+
+    const ratingChart = barchart(".chart2", data);
+
+    const covidChart = CovidMap(".chart4", data);
     
 
 }); // end of csv parsing
+
+d3.json('data/closedRestaurants.json', d3.autoType).then(data => {
+
+    const closedRestaurantsChart = closedRestaurant("closedRestaurantMap", data);
+
+});
+
+d3.json('data/slopegraphData.json', d3.autoType).then(data => {
+
+    const slopeGraphChart = slopeGraph(".slopeChart", data);
+
+}); 
 

@@ -198,12 +198,12 @@ export default function lineChart(container, restuarant, bubble_data, chart_data
    
     d3.select("#button-holder").on("click", function (d) {
         console.log("CLICK REGISTERED!")
-        d3.selectAll("svg")
+        d3.selectAll("#barchart1 svg")
             .attr("class", "hidden3")
             .transition()
             .duration(2000)
 
-        d3.selectAll("svg")
+        d3.selectAll("#barchart1 svg")
             .remove()
         // d3.select("#toolbar")
         //     .remove()

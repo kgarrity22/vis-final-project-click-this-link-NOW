@@ -1,5 +1,7 @@
 import lineChart from './line.js';
 import bars from './bars.js'
+import closedRestaurant from './closedRestaurant.js';
+import slopeGraph from './slopegraph.js';
 
 export default function bubble(container, data, chart_data) {
     console.log("data entered into bubble: ", data)
@@ -267,7 +269,7 @@ export default function bubble(container, data, chart_data) {
 
     d3.select("#return-to-chart")
         .on("click", function(d){
-            d3.selectAll("svg")
+            d3.selectAll("#barchart1 svg")
                 .remove()
             
             bars("#barchart1", chart_data)

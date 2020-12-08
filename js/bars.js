@@ -216,11 +216,11 @@ export default function bars(container, data) {
                 .classed("hidden3", false)
 
 
-            d3.selectAll("svg")
+            d3.selectAll("#barchart1 svg")
                 .attr("class", "hidden")
                 .transition()
                 .duration(2000)
-            d3.selectAll("svg")
+            d3.selectAll("#barchart1 svg")
                 .remove()
             
             
