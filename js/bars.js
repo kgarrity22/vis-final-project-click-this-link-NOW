@@ -1,6 +1,11 @@
 import bubble from './bubble.js';
 
 export default function bars(container, data) {
+    
+    d3.select("#returntobubbles")
+        .classed("hidden3", true)
+    
+    
 
     // eliminate the empty / bad data points (no reviews, no location)
 
@@ -201,6 +206,9 @@ export default function bars(container, data) {
                 .html(``)
                 .classed("hidden", true)
 
+            d3.select("#returntobubbles")
+                .classed("hidden3", true)
+
 
             d3.selectAll("svg")
                 .attr("class", "hidden")
@@ -227,6 +235,12 @@ export default function bars(container, data) {
             const neighborhoodChart = bubble("#bubble-chart", bubble_data, new_data);
             d3.select("#chart-tip")
                 .remove()
+            
+            d3.select("#neighb-name h2")
+                .remove()
+            d3.select("#neighb-name h5")
+                .remove()
+
             d3.select("#neighb-name")
                 .append("h2")
                 .text(bubble_data[0].restaurant_neighborhood + " Restaurants")

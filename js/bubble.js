@@ -1,4 +1,5 @@
 import lineChart from './line.js';
+import bars from './bars.js'
 
 export default function bubble(container, data, chart_data) {
     console.log("data entered into bubble: ", data)
@@ -264,11 +265,19 @@ export default function bubble(container, data, chart_data) {
 
     setupButtons()
 
+    d3.select("#return-to-chart")
+        .on("click", function(d){
+            d3.selectAll("svg")
+                .remove()
+            bars(".chart1", chart_data)
+        })
+
     d3.selectAll("circle")
         .on("click", function(e, d){
             // console.log("Event is: ", e)
             // console.log("data is: ", d)
-            
+            d3.select("#returntobubbles")
+                .classed("hidden3", false)
 
             d3.selectAll("svg")
                 .attr("class", "hidden")

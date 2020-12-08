@@ -4,6 +4,9 @@ export default function lineChart(container, restuarant, bubble_data, chart_data
     console.log("IS THE LINE CHART WORKING")
     console.log("REStauratns: ", restuarant)
 
+    d3.select("#returntobubbles")
+        .classed("hidden3", false)
+
     const margin = ({ top: 20, right: 20, bottom: 20, left: 40 })
     const width = 500 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
@@ -191,19 +194,15 @@ export default function lineChart(container, restuarant, bubble_data, chart_data
 
     
 
-    var back_bubble_button = d3.select("#button-holder")
-        .append("button")
-        .attr("id", "returntobubbles")
-        .attr("class", "button active button-outline")
-        .text("Go Back")
-
    
-    back_bubble_button.on("click", function (d) {
+   
+    d3.select("#button-holder").on("click", function (d) {
         console.log("CLICK REGISTERED!")
         d3.selectAll("svg")
             .attr("class", "hidden3")
             .transition()
             .duration(2000)
+
         d3.selectAll("svg")
             .remove()
         // d3.select("#toolbar")
