@@ -7,6 +7,9 @@ export default function lineChart(container, restuarant, bubble_data, chart_data
     d3.select("#returntobubbles")
         .classed("hidden3", false)
 
+    d3.selectAll("#line-name")
+        .classed("hidden3", false)
+
     const margin = ({ top: 20, right: 20, bottom: 20, left: 40 })
     const width = 500 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
@@ -220,8 +223,7 @@ export default function lineChart(container, restuarant, bubble_data, chart_data
 
         d3.select("#neighb-name")
             .classed("hidden3", false)
-        d3.select("#neighb-name")
-            .classed("hidden3", false)
+        
 
         d3.select("#toolbar")
             .classed("hidden3", false)
